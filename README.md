@@ -21,9 +21,9 @@
 ### 前端：
 
 - 样式来自于：[hexo的aurora主题](https://github.com/auroral-ui/hexo-theme-aurora)
-- 基础框架：vue3(前台) vue2(后台)
-- 状态管理：pinia(前台) vuex(后台)
-- 路由组件：vue-router
+- 基础框架：vue3(前台) react(后台)
+- 状态管理：pinia(前台) zustand(后台)
+- 路由组件：vue-router(前台) react-router-dom(后台)
 - 网络请求：axios
 - 其他技术：详见前端项目的package.json
 
@@ -45,14 +45,11 @@
 ## 后续计划
 
 - [ ] 前台代码优化
-- [ ] 后台vue3重构
-- [ ] 后端提供轻量化选择
+- [ ] 后台react重构
 
 ## 部署
 
 - 详见项目部署文档
 
 ## 鸣谢
-
-- 感谢[linhaojun857](https://github.com/linhaojun857)开源前后端博客
 - 感谢[babyfish](https://github.com/babyfish-ct/jimmer)开源的强大orm框架
