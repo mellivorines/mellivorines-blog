@@ -1,0 +1,14 @@
+input OperationLogInput {
+    optModule
+    optType
+    optDesc
+    requestMethod
+    optMethod
+    requestParam
+    responseData
+    userId
+    nickname
+    ipAddress
+    ipSource
+    optUri
+}

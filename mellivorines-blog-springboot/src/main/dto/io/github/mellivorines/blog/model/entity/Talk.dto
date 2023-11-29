@@ -1,0 +1,24 @@
+input TalkInputForSave{
+        content
+        images
+        isTop
+        status
+}
+input TalkInputForUpdate:TalkInputForSave{
+        id
+}
+input TalkView {
+        id
+        isTop
+        createTime
+        content
+        images
+        user {
+                       nickname
+                       avatar
+        }
+}
+
+input TalkAdminView:TalkView{
+        status
+}

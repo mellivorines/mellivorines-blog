@@ -1,0 +1,7 @@
+input PhotoAlbumOutput {
+    albumCover as photoAlbumCover
+    albumName as photoAlbumName
+    photos {
+        photoSrc
+    }
+}

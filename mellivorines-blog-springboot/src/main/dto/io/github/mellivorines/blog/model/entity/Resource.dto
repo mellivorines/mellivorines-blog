@@ -1,0 +1,29 @@
+input ResourceDTO{
+    #allScalars(Resource)
+    childResource {
+        #allScalars(Resource)
+    }
+}
+
+input ResourceInputForUpdate{
+        resourceName
+        url
+        requestMethod
+        parent {
+          id as parentId
+        }
+        isAnonymous
+}
+input ResourceInputForSave:ResourceInputForUpdate{
+        id
+}
+
+input ResourceAdminDTO{
+    #allScalars(Resource)
+    childResource {
+        #allScalars(Resource)
+    }
+    roles{
+        #allScalars(Role)
+    }
+}

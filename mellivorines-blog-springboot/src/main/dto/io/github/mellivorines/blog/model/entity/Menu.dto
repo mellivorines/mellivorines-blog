@@ -1,0 +1,38 @@
+input MenuDTO{
+    #allScalars(Menu)
+    childMenu{
+        #allScalars(Menu)
+    }
+}
+input MenuAdminDTO:MenuDTO{
+    parent{
+        #allScalars(Menu)
+    }
+    roles{
+        #allScalars(Role)
+    }
+}
+input UserMenuDTO:MenuDTO{
+    roles{
+        #allScalars(Role)
+    }
+}
+input MenuIsHiddenInput{
+    id
+    isHidden
+}
+
+input MenuInputForUpdate{
+        name
+        icon
+        path
+        component
+        orderNum
+        isHidden
+        flat(parent) {
+          id as parentId
+        }
+}
+input MenuInputForSave:MenuInputForUpdate{
+        id
+}

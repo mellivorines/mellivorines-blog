@@ -1,0 +1,40 @@
+input UserAuthAdmin{
+            id
+            username
+            loginType
+            ipAddress
+            ipSource
+            createTime
+            updateTime
+            lastLoginTime
+            flat(userInfo) {
+                   id as userInfoId
+                   avatar
+                   nickname
+                   isDisable
+            }
+
+            roles {
+                   #allScalars(Role)
+            }
+}
+
+input UserAuthInput{
+            id
+            username
+            password
+            loginType
+            createTime
+            updateTime
+            userInfo {
+
+                   id
+                   email
+                   avatar
+                   nickname
+            }
+
+            roles {
+                   #allScalars(Role)
+            }
+}

@@ -1,0 +1,10 @@
+input ExceptionLogInput {
+    optUri
+    optMethod
+    requestMethod
+    requestParam
+    optDesc
+    exceptionInfo
+    ipAddress
+    ipSource
+}

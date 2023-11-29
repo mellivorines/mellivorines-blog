@@ -1,0 +1,9 @@
+input QuartzLogInput {
+        jobId
+        beanName
+        params
+        createTime
+        state
+        times
+        error
+}

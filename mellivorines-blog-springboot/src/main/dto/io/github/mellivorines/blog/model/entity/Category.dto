@@ -1,0 +1,6 @@
+input CategoryInputForUpdate{
+    categoryName
+}
+input CategoryInputForSave:CategoryInputForUpdate{
+    id
+}

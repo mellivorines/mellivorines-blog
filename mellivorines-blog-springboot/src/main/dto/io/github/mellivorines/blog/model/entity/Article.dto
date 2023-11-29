@@ -1,0 +1,22 @@
+input ArticleInput {
+    id
+    articleCover
+    articleTitle
+    articleContent
+    isTop
+    isFeatured
+    status
+    createTime
+    updateTime
+
+    flat(category) {
+       categoryName
+    }
+
+    myTags {
+        #allScalars(MyTag)
+    }
+    user as author {
+        #allScalars(UserInfo)
+    }
+}
