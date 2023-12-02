@@ -3,6 +3,10 @@ input TalkInputForSave{
         images
         isTop
         status
+
+    flat(user) {
+       id as userId
+    }
 }
 input TalkInputForUpdate:TalkInputForSave{
         id
@@ -13,9 +17,9 @@ input TalkView {
         createTime
         content
         images
-        user {
-                       nickname
-                       avatar
+        flat(user) {
+           nickname
+           avatar
         }
 }
 
