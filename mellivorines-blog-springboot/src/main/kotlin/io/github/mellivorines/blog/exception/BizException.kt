@@ -4,7 +4,7 @@ import io.github.mellivorines.blog.constant.StatusCodeEnum
 
 
 /**
- * @Description:
+ * @Description:异常类
  *
  * @author lilinxi
  * @version 1.0.0

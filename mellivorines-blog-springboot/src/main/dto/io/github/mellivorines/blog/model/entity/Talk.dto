@@ -4,9 +4,9 @@ input TalkInputForSave{
         isTop
         status
 
-    flat(user) {
-       id as userId
-    }
+        flat(user) {
+            id as userId
+        }
 }
 input TalkInputForUpdate:TalkInputForSave{
         id
