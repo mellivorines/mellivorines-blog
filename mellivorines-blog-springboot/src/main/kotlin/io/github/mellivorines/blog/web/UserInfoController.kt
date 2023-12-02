@@ -1,4 +1,4 @@
-package io.github.mellivorines.blog.controller
+package io.github.mellivorines.blog.web
 
 import io.github.mellivorines.blog.model.ResultVO
 import io.github.mellivorines.blog.model.entity.UserInfo
@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile
 
 
 /**
- * @Description:
+ * @Description:用户信息模块
  *
  * @author lilinxi
  * @version 1.0.0

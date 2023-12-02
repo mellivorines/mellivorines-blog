@@ -1,4 +1,4 @@
-package io.github.mellivorines.blog.controller
+package io.github.mellivorines.blog.web
 
 import io.github.mellivorines.blog.model.ResultVO
 import io.github.mellivorines.blog.model.entity.Role
@@ -10,6 +10,14 @@ import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.data.domain.Page
 import org.springframework.web.bind.annotation.*
 
+
+/**
+ * @Description:角色模块
+ *
+ * @author lilinxi
+ * @version 1.0.0
+ * @since 2023/9/9
+ */
 @Tag(name = "角色模块")
 @RestController
 @RequestMapping("/api/auth/")

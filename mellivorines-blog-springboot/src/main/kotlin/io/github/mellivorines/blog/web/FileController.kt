@@ -1,4 +1,4 @@
-package io.github.mellivorines.blog.controller
+package io.github.mellivorines.blog.web
 
 import cn.xuyanwu.spring.file.storage.FileStorageService
 import io.github.mellivorines.blog.constant.FilePathEnum
@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile
 
 
 /**
- * @Description:
+ * @Description:文件相关
  *
  * @author lilinxi
  * @version 1.0.0

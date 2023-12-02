@@ -1,4 +1,4 @@
-package io.github.mellivorines.blog.controller
+package io.github.mellivorines.blog.web
 
 import io.github.mellivorines.blog.service.TagService
 import io.github.mellivorines.blog.model.ResultVO
@@ -10,6 +10,14 @@ import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.data.domain.Page
 import org.springframework.web.bind.annotation.*
 
+
+/**
+ * @Description:标签相关
+ *
+ * @author lilinxi
+ * @version 1.0.0
+ * @since 2023/10/14
+ */
 @Tag(name = "标签模块")
 @RestController
 @RequestMapping("/api")

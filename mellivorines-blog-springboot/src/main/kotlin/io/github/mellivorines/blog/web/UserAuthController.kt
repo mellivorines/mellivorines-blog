@@ -1,4 +1,4 @@
-package io.github.mellivorines.blog.controller
+package io.github.mellivorines.blog.web
 
 import io.github.mellivorines.blog.model.ResultVO
 import io.github.mellivorines.blog.model.entity.dto.UserAuthAdmin
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*
 
 
 /**
- * @Description:
+ * @Description:用户账号模块
  *
  * @author lilinxi
  * @version 1.0.0

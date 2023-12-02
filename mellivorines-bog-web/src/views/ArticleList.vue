@@ -61,14 +61,14 @@ export default defineComponent({
           size: pagination.size
         })
         .then(({ data }) => {
-          data.data.records.forEach((item: any) => {
+          data.data.content.forEach((item: any) => {
             item.articleContent = markdownToHtml(item.articleContent)
               .replace(/<\/?[^>]*>/g, '')
               .replace(/[|]*\n/, '')
               .replace(/&npsp;/gi, '')
           })
-          reactiveData.articles = data.data.records
-          pagination.total = data.data.count
+          reactiveData.articles = data.data.content
+          pagination.total = data.data.content.length
           reactiveData.haveArticles = true
         })
     }

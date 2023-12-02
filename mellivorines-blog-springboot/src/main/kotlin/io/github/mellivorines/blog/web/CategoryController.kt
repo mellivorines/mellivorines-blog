@@ -1,4 +1,4 @@
-package io.github.mellivorines.blog.controller
+package io.github.mellivorines.blog.web
 
 import io.github.mellivorines.blog.model.ResultVO
 import io.github.mellivorines.blog.model.entity.Category

@@ -1,4 +1,4 @@
-package io.github.mellivorines.blog.controller
+package io.github.mellivorines.blog.web
 
 import io.github.mellivorines.blog.model.ResultVO
 import io.github.mellivorines.blog.model.entity.dto.*
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 
 
 /**
- * @Description:
+ * @Description:菜单模块
  *
  * @author lilinxi
  * @version 1.0.0
