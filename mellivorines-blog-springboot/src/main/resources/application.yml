@@ -84,8 +84,8 @@ spring:
     host: smtp.163.com
     protocol: smtp
     default-encoding: UTF-8
-    username: lilinxi015@163.com
-    password: WOOONCHICVRQTDJB
+    username: ${email_username}
+    password: ${email_password}
     port: 465
     test-connection: true
     properties:
@@ -101,11 +101,10 @@ spring:
 
   data:
     redis:
-#      host: 124.220.152.5
-      host: 127.0.0.1
+      host: ${redis_host}
       port: 6379
       database: 0
-      password: 123456 #默认为空
+      password: ${redis_password} #默认为空
       timeout: 3000ms
       lettuce:
         pool:
@@ -115,15 +114,15 @@ spring:
           min-idle: 0     # 最小空闲连接，默认0
 
   datasource:
-    url: jdbc:mysql://localhost:3306/mellivorines_blog?serverTimezone=GMT%2B8
-    username: root
-    password: 123456
+    url: jdbc:mysql://${sql_host}:3306/mellivorines_blog?serverTimezone=GMT%2B8
+    username: ${sql_username}
+    password: ${sql_password}
     driver-class-name: com.mysql.cj.jdbc.Driver
   rabbitmq:
-    host: 127.0.0.1
+    host: ${rabbitmq_host}
     port: 5672
-    username: lilinxi #默认用户名和密码
-    password: 123456
+    username: ${rabbitmq_username} #默认用户名和密码
+    password: ${rabbitmq_password}
     listener:
       simple:
         retry:
