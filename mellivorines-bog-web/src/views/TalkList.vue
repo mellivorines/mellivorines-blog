@@ -25,6 +25,9 @@
                 <template v-if="item.isTop === 1">
                   <svg-icon icon-class="top" class="top-svg" /><span style="color: #f21835">置顶</span>
                 </template>
+                <template v-else-if="item.isfeatured === 1">
+                  <svg-icon icon-class="hot" class="hot-svg" /><span style="color: #f21835">推荐</span>
+                </template>
                 <svg-icon icon-class="message" class="message-svg" />{{
                   item.commentCount == null ? 0 : item.commentCount
                 }}

@@ -15,7 +15,6 @@
     <div class="article">
       <div class="article-thumbnail">
         <img v-if="article.articleCover" v-lazy="article.articleCover" alt="" />
-        <img v-else src="@/assets/default-cover.jpg" />
         <span class="thumbnail-screen" :style="gradientBackground" />
       </div>
       <div class="article-content">
@@ -85,7 +84,6 @@ import { useUserStore } from '@/stores/user'
 import { useRouter } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import emitter from '@/utils/mitt'
-
 export default defineComponent({
   name: 'ArticleCard',
   props: ['data'],

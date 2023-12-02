@@ -159,15 +159,16 @@ export default defineComponent({
             size: pagination.size
           })
           .then(({ data }) => {
-            if (data.flag) {
-              data.data.records.forEach((item: any) => {
+            if (data) {
+              console.log(data.data.content)
+              data.data.content.forEach((item: any) => {
                 item.articleContent = markdownToHtml(item.articleContent)
                   .replace(/<\/?[^>]*>/g, '')
                   .replace(/[|]*\n/, '')
                   .replace(/&npsp;/gi, '')
               })
-              articleStore.articles = data.data.records
-              pagination.total = data.data.count
+              articleStore.articles = data.data.content
+              pagination.total = data.data.content.length
               reactiveData.haveArticles = true
             }
           })
@@ -184,14 +185,14 @@ export default defineComponent({
           categoryId: categoryId
         })
         .then(({ data }) => {
-          data.data.records.forEach((item: any) => {
+          data.data.content.forEach((item: any) => {
             item.articleContent = markdownToHtml(item.articleContent)
               .replace(/<\/?[^>]*>/g, '')
               .replace(/[|]*\n/, '')
               .replace(/&npsp;/gi, '')
           })
-          articleStore.articles = data.data.records
-          pagination.total = data.data.count
+          articleStore.articles = data.data.content
+          pagination.total = data.data.content.length
           reactiveData.haveArticles = true
         })
     }
