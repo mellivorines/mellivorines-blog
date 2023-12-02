@@ -96,8 +96,8 @@ export default defineComponent({
         size: pagination.size
       }
       api.getTalks(params).then(({ data }) => {
-        reactiveData.talks = data.data.records
-        pagination.total = data.data.count
+        reactiveData.talks = data.data
+        pagination.total = data.data.length
         reactiveData.talks.forEach((item: any) => {
           if (item.imgs) {
             reactiveData.images.push(...item.imgs)
