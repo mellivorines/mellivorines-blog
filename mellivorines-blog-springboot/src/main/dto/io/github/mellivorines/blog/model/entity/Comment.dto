@@ -1,0 +1,10 @@
+input CommentInput{
+        id
+        commentContent
+        createTime
+        flat(user) {
+            id as userId
+            nickname
+            avatar
+        }
+}
