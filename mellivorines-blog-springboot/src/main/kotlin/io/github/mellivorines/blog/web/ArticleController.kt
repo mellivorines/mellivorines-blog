@@ -4,6 +4,7 @@ import io.github.mellivorines.blog.model.ResultVO
 import io.github.mellivorines.blog.model.dto.TopAndFeatured
 import io.github.mellivorines.blog.model.entity.*
 import io.github.mellivorines.blog.model.entity.dto.ArticleInput
+import io.github.mellivorines.blog.model.vo.ArchivesVO
 import io.github.mellivorines.blog.repository.ArticleRepository
 import io.github.mellivorines.salamanderblog.out.ConditionVO
 import io.swagger.v3.oas.annotations.tags.Tag
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
+import java.time.format.DateTimeFormatter
 
 
 /**
@@ -88,6 +90,24 @@ class ArticleController(
         }.fetchPage(pageSize = conditionVO.size, pageIndex = conditionVO.current - 1)
 
         return ResultVO.success(articlesByTagId)
+    }
+
+
+    @GetMapping("/archives/all")
+    fun archivesAll(conditionVO: ConditionVO): ResultVO<List<ArchivesVO>> {
+        val archivesAll = articleRepository.sql.createQuery(Article::class) {
+            orderBy(table.createTime)
+            select(table.fetch(ArticleInput::class))
+        }.fetchPage(pageSize = conditionVO.size, pageIndex = conditionVO.current - 1)
+
+        val fmt = DateTimeFormatter.ofPattern("yyyy-MM")
+        val groupBy = archivesAll.toList().groupBy { it.createTime.format(fmt) }
+        val list = ArrayList<ArchivesVO>()
+        groupBy.forEach { (t, u) ->
+            val archivesVO = ArchivesVO(t, u)
+            list.add(archivesVO)
+        }
+        return ResultVO.success(list)
     }
 
 }
