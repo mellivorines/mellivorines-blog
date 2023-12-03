@@ -18,7 +18,15 @@ import org.springframework.stereotype.Service
 class TagService(
         private val tagRepository: TagRepository
 ) {
-    fun listTags(): List<MyTag>? = tagRepository.findAll()
+    fun listTags(): List<MyTag>? = tagRepository.sql.createQuery(MyTag::class) {
+        orderBy(table.id.desc())
+        select(table.fetchBy {
+            allScalarFields()
+            articles {
+                allScalarFields()
+            }
+        })
+    }.execute()
 
     fun listTopTenTags(): List<MyTag>? {
         val listTags = listTags()
