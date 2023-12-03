@@ -50,6 +50,15 @@ export default {
       children: []
     },
     {
+      name: 'Categories',
+      path: '/categories',
+      i18n: {
+        cn: '分类',
+        en: 'categories'
+      },
+      children: []
+    },
+    {
       name: 'Message',
       path: '/message',
       i18n: {
