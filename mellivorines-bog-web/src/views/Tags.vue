@@ -7,7 +7,7 @@
     <div class="bg-ob-deep-800 px-14 py-16 rounded-2xl shadow-xl block">
       <TagList>
         <template v-if="tags != '' && tags.length > 0">
-          <TagItem v-for="tag in tags" :key="tag.id" :id="tag.id" :name="tag.tagName" :count="tag.count" size="xl" />
+          <TagItem v-for="tag in tags" :key="tag.id" :id="tag.id" :name="tag.tagName" :count="tag.articles.length" size="xl" />
         </template>
       </TagList>
     </div>
