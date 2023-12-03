@@ -45,7 +45,6 @@ interface Photo : BaseEntity {
      *  是否删除
      */
     @Column(name = "is_delete")
-    @LogicalDeleted(value = "1", restoredValue = "0")
     val isDelete: Int
 
     @ManyToOne

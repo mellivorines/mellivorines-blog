@@ -4,6 +4,10 @@ input FriendLinkInputForUpdate{
     linkAddress
     linkIntro
 }
-input FriendLinkInputForSave:FriendLinkInputForUpdate{
+input FriendLinkInputForSave{
     id
+    linkName
+    linkAvatar
+    linkAddress
+    linkIntro
 }

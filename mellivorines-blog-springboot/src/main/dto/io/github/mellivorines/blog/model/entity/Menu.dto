@@ -4,7 +4,11 @@ input MenuDTO{
         #allScalars(Menu)
     }
 }
-input MenuAdminDTO:MenuDTO{
+input MenuAdminDTO{
+    #allScalars(Menu)
+    childMenu{
+        #allScalars(Menu)
+    }
     parent{
         #allScalars(Menu)
     }
@@ -12,7 +16,11 @@ input MenuAdminDTO:MenuDTO{
         #allScalars(Role)
     }
 }
-input UserMenuDTO:MenuDTO{
+input UserMenuDTO{
+    #allScalars(Menu)
+    childMenu{
+        #allScalars(Menu)
+    }
     roles{
         #allScalars(Role)
     }
@@ -33,6 +41,15 @@ input MenuInputForUpdate{
           id as parentId
         }
 }
-input MenuInputForSave:MenuInputForUpdate{
-        id
+input MenuInputForSave{
+                id
+                name
+                icon
+                path
+                component
+                orderNum
+                isHidden
+                flat(parent) {
+                  id as parentId
+                }
 }

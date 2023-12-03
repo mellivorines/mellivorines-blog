@@ -23,10 +23,17 @@ interface Comment : BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Int
 
-    /**
-     *  评论用户Id
-     */
-    @Column(name = "user_id")
+//    /**
+//     *  评论用户Id
+//     */
+//    @Column(name = "user_id")
+//    val userId: Int
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    val user: UserInfo
+
+    @IdView()
     val userId: Int
 
     /**

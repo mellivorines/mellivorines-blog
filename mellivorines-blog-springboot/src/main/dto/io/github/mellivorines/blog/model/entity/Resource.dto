@@ -14,8 +14,15 @@ input ResourceInputForUpdate{
         }
         isAnonymous
 }
-input ResourceInputForSave:ResourceInputForUpdate{
-        id
+input ResourceInputForSave{
+                id
+                resourceName
+                url
+                requestMethod
+                parent {
+                  id as parentId
+                }
+                isAnonymous
 }
 
 input ResourceAdminDTO{

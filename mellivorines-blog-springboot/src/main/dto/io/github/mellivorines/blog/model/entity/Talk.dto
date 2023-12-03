@@ -8,8 +8,16 @@ input TalkInputForSave{
             id as userId
         }
 }
-input TalkInputForUpdate:TalkInputForSave{
+input TalkInputForUpdate{
         id
+        content
+        images
+        isTop
+        status
+
+        flat(user) {
+            id as userId
+        }
 }
 input TalkView {
         id
@@ -23,6 +31,15 @@ input TalkView {
         }
 }
 
-input TalkAdminView:TalkView{
+input TalkAdminView{
         status
+        id
+        isTop
+        createTime
+        content
+        images
+        flat(user) {
+           nickname
+           avatar
+        }
 }
