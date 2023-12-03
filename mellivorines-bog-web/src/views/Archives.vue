@@ -83,7 +83,7 @@ export default defineComponent({
           size: pagination.size
         })
         .then(({ data }) => {
-          data.data.records.forEach((item: any) => {
+          data.data.forEach((item: any) => {
             item.articles.forEach((article: any) => {
               article.articleContent = markdownToHtml(article.articleContent)
                 .replace(/<\/?[^>]*>/g, '')
@@ -91,8 +91,8 @@ export default defineComponent({
                 .replace(/&npsp;/gi, '')
             })
           })
-          articleStore.archives = data.data.records
-          pagination.total = data.data.count
+          articleStore.archives = data.data
+          pagination.total = data.data.length
         })
     }
     const pageChangeHanlder = (current: number) => {
