@@ -100,13 +100,9 @@ class ArticleController(
             select(table.fetch(ArticleInput::class))
         }.fetchPage(pageSize = conditionVO.size, pageIndex = conditionVO.current - 1)
 
-        val fmt = DateTimeFormatter.ofPattern("yyyy-MM")
-        val groupBy = archivesAll.toList().groupBy { it.createTime.format(fmt) }
+        val groupBy = archivesAll.toList().groupBy { it.createTime.format(DateTimeFormatter.ofPattern("yyyy-MM")) }
         val list = ArrayList<ArchivesVO>()
-        groupBy.forEach { (t, u) ->
-            val archivesVO = ArchivesVO(t, u)
-            list.add(archivesVO)
-        }
+        groupBy.forEach { list.add(ArchivesVO(it.key, it.value)) }
         return ResultVO.success(list)
     }
 
