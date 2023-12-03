@@ -107,12 +107,12 @@ export default defineComponent({
       }
       api.getComments(params).then(({data}) => {
         if (reactiveData.isReload) {
-          reactiveData.comments = data.records
+          reactiveData.comments = data.data.content
           reactiveData.isReload = false
         } else {
-          reactiveData.comments.push(...data.records)
+          reactiveData.comments.push(...data.data.content)
         }
-        if (data.count <= reactiveData.comments.length) {
+        if (data.data.content.length <= reactiveData.comments.length) {
           reactiveData.haveMore = false
         } else {
           reactiveData.haveMore = true

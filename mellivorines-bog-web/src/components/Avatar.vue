@@ -16,7 +16,7 @@ export default defineComponent({
   setup(props) {
     return {
       url: toRefs(props).url,
-      default: './src/assets/default-account-picture.jpg'
+      // default: './src/assets/default-account-picture.jpg'
     }
   }
 })

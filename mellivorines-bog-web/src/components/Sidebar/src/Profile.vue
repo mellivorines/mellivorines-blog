@@ -63,7 +63,7 @@ export default defineComponent({
     const appStore = useAppStore()
     const { t } = useI18n()
     return {
-      default: './src/assets/default-account-picture.jpg',
+      // default: './src/assets/default-account-picture.jpg',
       avatarClass: computed(() => {
         return {
           'ob-avatar': true,
