@@ -33,10 +33,7 @@ app.use(pinia)
 app.use(VueClickAway)
 app.use(infiniteScroll)
 app.use(v3ImgPreview,{})
-app.use(lazyPlugin,{
-    loading: '@/assets/default-cover.jpg',
-    error: '@/assets/default-cover.jpg'
-})
+app.use(lazyPlugin,{})
 registerObSkeleton(app)
 app.use(router)
 app.use(createPinia)
