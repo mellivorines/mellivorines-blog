@@ -1,4 +1,4 @@
-input PhotoAlbumInput {
+input PhotoAlbumView {
     albumCover as photoAlbumCover
     albumName as photoAlbumName
     photos {

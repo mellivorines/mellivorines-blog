@@ -4,7 +4,7 @@ import cn.xuyanwu.spring.file.storage.FileStorageService
 import io.github.mellivorines.blog.constant.FilePathEnum
 import io.github.mellivorines.blog.model.ResultVO
 import io.github.mellivorines.blog.model.entity.*
-import io.github.mellivorines.blog.model.entity.dto.PhotoAlbumInput
+import io.github.mellivorines.blog.model.entity.dto.PhotoAlbumView
 import io.github.mellivorines.blog.repository.PhotoAlbumRepository
 import io.github.mellivorines.blog.repository.PhotoRepository
 import io.github.mellivorines.salamanderblog.out.ConditionVO
@@ -97,11 +97,11 @@ class PhotoController(
     @GetMapping("/albums/{albumId}/photos")
     fun listPhotosByAlbumId(
         @PathVariable("albumId") albumId: Int,
-    ): ResultVO<PhotoAlbumInput> {
+    ): ResultVO<PhotoAlbumView> {
         return ResultVO.success(
             photoAlbumRepository.sql.createQuery(PhotoAlbum::class) {
                 where(table.id eq albumId)
-                select(table.fetch(PhotoAlbumInput::class))
+                select(table.fetch(PhotoAlbumView::class))
             }.fetchOneOrNull()
         )
     }
