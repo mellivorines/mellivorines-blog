@@ -8,7 +8,7 @@ plugins {
     id("com.google.devtools.ksp") version "1.9.20-1.0.14"
 }
 
-val jimmerVersion = "0.8.16"
+val jimmerVersion = "0.8.51"
 
 group = "io.github.mellivorines"
 version = "0.0.1"
