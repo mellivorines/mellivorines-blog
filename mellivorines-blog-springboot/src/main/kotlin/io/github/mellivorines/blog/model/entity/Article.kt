@@ -89,11 +89,6 @@ interface Article : BaseEntity {
     @IdView()
     val userId: Int
 
-    @ManyToOne
-    val category: Category
-
-    @IdView()
-    val categoryId: Int
 
     @ManyToMany
     @JoinTable(
@@ -102,4 +97,12 @@ interface Article : BaseEntity {
         inverseJoinColumnName = "tag_id"
     )
     val myTags: List<MyTag>
+
+    @ManyToMany
+    @JoinTable(
+        name = "mellivorines_blog_article_category",
+        joinColumnName = "article_id",
+        inverseJoinColumnName = "category_id"
+    )
+    val categories: List<Category>
 }

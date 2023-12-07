@@ -29,4 +29,7 @@ interface Category : BaseEntity {
     @Column(name = "category_name")
     val categoryName: String
 
+    @ManyToMany(mappedBy = "categories")
+    val articles: List<Article>
+
 }

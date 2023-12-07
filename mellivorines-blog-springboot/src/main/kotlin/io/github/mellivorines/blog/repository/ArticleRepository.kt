@@ -26,7 +26,7 @@ interface ArticleRepository : KRepository<Article, Int> {
             table.fetchBy {
                 allScalarFields()
                 user { allScalarFields() }
-                category { allScalarFields() }
+                categories { allScalarFields() }
                 myTags { allScalarFields() }
                 orderBy<Article> {
                     table.isTop
@@ -45,7 +45,7 @@ interface ArticleRepository : KRepository<Article, Int> {
                     where(table.status eq 1)
                     allScalarFields()
                     user { allScalarFields() }
-                    category { allScalarFields() }
+                    categories { allScalarFields() }
                     myTags { allScalarFields() }
                     orderBy<Article> {
                         table.isTop
@@ -62,10 +62,10 @@ interface ArticleRepository : KRepository<Article, Int> {
          val fetchPage = sql.createQuery(Article::class) {
              select(
                  table.fetchBy {
-                     where(table.categoryId eq categoryId)
+                     where(table.asTableEx().categories.id eq categoryId)
                      allScalarFields()
                      user { allScalarFields() }
-                     category { allScalarFields() }
+                     categories { allScalarFields() }
                      myTags { allScalarFields() }
                      orderBy<Article> {
                          table.isTop

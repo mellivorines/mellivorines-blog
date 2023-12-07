@@ -9,8 +9,8 @@ input ArticleInput {
     createTime
     updateTime
 
-    flat(category) {
-       categoryName
+    categories {
+       #allScalars(Category)
     }
 
     myTags {

@@ -35,7 +35,13 @@ class CategoryController(
     @Operation(summary = "获取所有分类")
     @GetMapping("/categories/all")
     fun listCategories(): ResultVO<List<Category>> {
-        return ResultVO.success(categoryRepository.findAll())
+        return ResultVO.success(categoryRepository.sql.createQuery(Category::class) {
+            orderBy(table.id.desc())
+            select(table.fetchBy {
+                allScalarFields()
+                articles { allScalarFields() }
+            })
+        }.execute())
     }
 
     @Operation(summary = "查看后台分类列表")

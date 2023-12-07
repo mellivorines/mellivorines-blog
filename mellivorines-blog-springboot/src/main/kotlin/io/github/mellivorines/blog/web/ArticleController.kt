@@ -62,7 +62,7 @@ class ArticleController(
     fun categoryId(conditionVO: ConditionVO): ResultVO<Page<ArticleInput>> {
         val all = articleRepository.sql.createQuery(Article::class) {
             conditionVO.categoryId?.let {
-                where(table.categoryId eq it)
+                where(table.asTableEx().categories.id eq it)
             }
             select(table.fetch(ArticleInput::class))
         }.fetchPage(pageSize = conditionVO.size, pageIndex = conditionVO.current - 1)
