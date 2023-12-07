@@ -24,7 +24,7 @@
                 {{ category.categoryName }}
               </span>
               <b>
-                {{ category.articleCount }}
+                {{ category.articles.length }}
               </b>
             </li>
           </template>

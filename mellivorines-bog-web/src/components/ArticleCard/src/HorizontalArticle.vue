@@ -19,13 +19,13 @@
       </div>
       <div class="feature-content">
         <span>
-          <b v-if="article.categoryName">
-            {{ article.categoryName }}
+          <b v-if="article.categories">
+            {{ article.categories[0].categoryName }}
           </b>
           <ob-skeleton v-else tag="b" height="20px" width="35px" />
           <ul>
-            <template v-if="article.tags && article.tags.length > 0">
-              <li v-for="tag in article.tags" :key="tag.id">
+            <template v-if="article.myTags && article.myTags.length > 0">
+              <li v-for="tag in article.myTags" :key="tag.id">
                 <em># {{ tag.tagName }}</em>
               </li>
             </template>
