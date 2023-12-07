@@ -11,7 +11,7 @@
  Target Server Version : 80031 (8.0.31)
  File Encoding         : 65001
 
- Date: 15/09/2023 23:39:05
+ Date: 07/12/2023 19:36:15
 */
 
 SET NAMES utf8mb4;
@@ -33,7 +33,7 @@ CREATE TABLE `mellivorines_blog_about` (
 -- Records of mellivorines_blog_about
 -- ----------------------------
 BEGIN;
-INSERT INTO `mellivorines_blog_about` (`id`, `content`, `create_time`, `update_time`) VALUES (1, '{\"content\":\"this is about\"}', '2022-07-24 17:22:13', '2022-09-23 14:37:34');
+INSERT INTO `mellivorines_blog_about` (`id`, `content`, `create_time`, `update_time`) VALUES (1, '# 个人介绍\n**忻辰** 心心念念，暮暮晨晨\n\n# 喜欢的书\n\n《三体I》\n\n《三体II》\n\n《三体III》\n\n# 爱好\n\n💗Loading\n\n🍓Code\n\n🎵Music\n\n⭐️Study\n\n🤗Playing game is a bit great\n\n# 联系方式\n\n**QQ**: 316595344\n\n**WeChat**: lz316595344', '2022-07-24 17:22:13', '2022-09-23 14:37:34');
 COMMIT;
 
 -- ----------------------------
@@ -43,7 +43,6 @@ DROP TABLE IF EXISTS `mellivorines_blog_article`;
 CREATE TABLE `mellivorines_blog_article` (
   `id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL COMMENT '作者',
-  `category_id` int NOT NULL COMMENT '文章分类',
   `article_cover` varchar(1024) CHARACTER SET utf8mb4 COLLATE utf8mb4_german2_ci DEFAULT NULL COMMENT '文章缩略图',
   `article_title` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_german2_ci NOT NULL COMMENT '标题',
   `article_content` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_german2_ci NOT NULL COMMENT '内容',
@@ -58,16 +57,42 @@ CREATE TABLE `mellivorines_blog_article` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
   KEY `user_id` (`user_id`),
-  KEY `category_id` (`category_id`),
-  CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `mellivorines_blog_category` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
   CONSTRAINT `fk_article_user_id` FOREIGN KEY (`user_id`) REFERENCES `mellivorines_blog_user_info` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=135 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci ROW_FORMAT=DYNAMIC COMMENT='表-文章';
+) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci ROW_FORMAT=DYNAMIC COMMENT='表-文章';
 
 -- ----------------------------
 -- Records of mellivorines_blog_article
 -- ----------------------------
 BEGIN;
-INSERT INTO `mellivorines_blog_article` (`id`, `user_id`, `category_id`, `article_cover`, `article_title`, `article_content`, `is_top`, `is_featured`, `is_delete`, `status`, `type`, `password`, `original_url`, `create_time`, `update_time`) VALUES (1, 1, 1, '\"\"', 'jagsdad', 'akudgaudfashda', 0, 0, 0, 1, 1, '123456', '\"\"', '2023-08-18 19:16:22', '2023-08-18 19:16:25');
+INSERT INTO `mellivorines_blog_article` (`id`, `user_id`, `article_cover`, `article_title`, `article_content`, `is_top`, `is_featured`, `is_delete`, `status`, `type`, `password`, `original_url`, `create_time`, `update_time`) VALUES (1, 1, 'http://127.0.0.1:8080/local-plus/photos/656a9324a2f42ab815604db5.jpg', 'jagsdad', '# mellivorines-blog 博客后台\n\n## 使用的技术\n### 语言\n- kotlin\n### 框架- 基础框架：SpringBoot3\n- ORM框架：[jimmer](https://github.com/babyfish-ct/jimmer)\n- 权限框架：SpringSecurity\n- 缓存中间件：redis\n- 消息中间件：rabbitmq\n- 搜索引擎：elasticsearch\n- 对象存储：minio\n- 定时任务：quartz', 1, 0, 0, 1, 1, '123456', '\"\"', '2023-08-18 19:16:22', '2023-08-18 19:16:25');
+INSERT INTO `mellivorines_blog_article` (`id`, `user_id`, `article_cover`, `article_title`, `article_content`, `is_top`, `is_featured`, `is_delete`, `status`, `type`, `password`, `original_url`, `create_time`, `update_time`) VALUES (2, 1025, 'http://127.0.0.1:8080/local-plus/photos/656a9324a2f42ab815604db5.jpg', '测试文章', '# mellivorines-blog 博客后台\n\n## 使用的技术\n### 语言\n- kotlin\n### 框架- 基础框架：SpringBoot3\n- ORM框架：[jimmer](https://github.com/babyfish-ct/jimmer)\n- 权限框架：SpringSecurity\n- 缓存中间件：redis\n- 消息中间件：rabbitmq\n- 搜索引擎：elasticsearch\n- 对象存储：minio\n- 定时任务：quartz', 0, 1, 0, 1, 1, '123456', '\"\"', '2023-08-18 19:16:22', '2023-08-18 19:16:25');
+INSERT INTO `mellivorines_blog_article` (`id`, `user_id`, `article_cover`, `article_title`, `article_content`, `is_top`, `is_featured`, `is_delete`, `status`, `type`, `password`, `original_url`, `create_time`, `update_time`) VALUES (135, 1, 'http://127.0.0.1:8080/local-plus/photos/656a9324a2f42ab815604db5.jpg', '测试文章', '# mellivorines-blog 博客后台\n\n## 使用的技术\n### 语言\n- kotlin\n### 框架- 基础框架：SpringBoot3\n- ORM框架：[jimmer](https://github.com/babyfish-ct/jimmer)\n- 权限框架：SpringSecurity\n- 缓存中间件：redis\n- 消息中间件：rabbitmq\n- 搜索引擎：elasticsearch\n- 对象存储：minio\n- 定时任务：quartz', 0, 1, 0, 1, 1, '123456', '\"\"', '2023-08-18 19:16:22', '2023-08-18 19:16:25');
+INSERT INTO `mellivorines_blog_article` (`id`, `user_id`, `article_cover`, `article_title`, `article_content`, `is_top`, `is_featured`, `is_delete`, `status`, `type`, `password`, `original_url`, `create_time`, `update_time`) VALUES (136, 1025, 'http://127.0.0.1:8080/local-plus/photos/656a9324a2f42ab815604db5.jpg', '测试文章', '# mellivorines-blog 博客后台\n\n## 使用的技术\n### 语言\n- kotlin\n### 框架- 基础框架：SpringBoot3\n- ORM框架：[jimmer](https://github.com/babyfish-ct/jimmer)\n- 权限框架：SpringSecurity\n- 缓存中间件：redis\n- 消息中间件：rabbitmq\n- 搜索引擎：elasticsearch\n- 对象存储：minio\n- 定时任务：quartz', 0, 0, 0, 1, 1, '123456', '\"\"', '2023-08-18 19:16:22', '2023-08-18 19:16:25');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for mellivorines_blog_article_category
+-- ----------------------------
+DROP TABLE IF EXISTS `mellivorines_blog_article_category`;
+CREATE TABLE `mellivorines_blog_article_category` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `article_id` int NOT NULL COMMENT '文章id',
+  `category_id` int NOT NULL COMMENT '分类id',
+  PRIMARY KEY (`id`) USING BTREE,
+  KEY `fk_article_tag_1` (`article_id`) USING BTREE,
+  KEY `fk_article_tag_2` (`category_id`) USING BTREE,
+  CONSTRAINT `mellivorines_blog_article_category_ibfk_1` FOREIGN KEY (`article_id`) REFERENCES `mellivorines_blog_article` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `mellivorines_blog_article_category_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `mellivorines_blog_category` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci ROW_FORMAT=DYNAMIC COMMENT='表-文章标签';
+
+-- ----------------------------
+-- Records of mellivorines_blog_article_category
+-- ----------------------------
+BEGIN;
+INSERT INTO `mellivorines_blog_article_category` (`id`, `article_id`, `category_id`) VALUES (1, 1, 1);
+INSERT INTO `mellivorines_blog_article_category` (`id`, `article_id`, `category_id`) VALUES (2, 2, 2);
+INSERT INTO `mellivorines_blog_article_category` (`id`, `article_id`, `category_id`) VALUES (3, 135, 2);
+INSERT INTO `mellivorines_blog_article_category` (`id`, `article_id`, `category_id`) VALUES (4, 136, 1);
 COMMIT;
 
 -- ----------------------------
@@ -90,7 +115,11 @@ CREATE TABLE `mellivorines_blog_article_tag` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `mellivorines_blog_article_tag` (`id`, `article_id`, `tag_id`) VALUES (1, 1, 1);
-INSERT INTO `mellivorines_blog_article_tag` (`id`, `article_id`, `tag_id`) VALUES (2, 1, 2);
+INSERT INTO `mellivorines_blog_article_tag` (`id`, `article_id`, `tag_id`) VALUES (2, 2, 2);
+INSERT INTO `mellivorines_blog_article_tag` (`id`, `article_id`, `tag_id`) VALUES (3, 1, 3);
+INSERT INTO `mellivorines_blog_article_tag` (`id`, `article_id`, `tag_id`) VALUES (4, 2, 4);
+INSERT INTO `mellivorines_blog_article_tag` (`id`, `article_id`, `tag_id`) VALUES (5, 135, 3);
+INSERT INTO `mellivorines_blog_article_tag` (`id`, `article_id`, `tag_id`) VALUES (6, 136, 4);
 COMMIT;
 
 -- ----------------------------
@@ -110,6 +139,7 @@ CREATE TABLE `mellivorines_blog_category` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `mellivorines_blog_category` (`id`, `category_name`, `create_time`, `update_time`) VALUES (1, 'Mysql', '2023-08-18 19:12:37', '2023-08-18 19:12:40');
+INSERT INTO `mellivorines_blog_category` (`id`, `category_name`, `create_time`, `update_time`) VALUES (2, 'kotlin', '2023-12-02 16:58:13', '2023-12-02 16:58:17');
 COMMIT;
 
 -- ----------------------------
@@ -131,13 +161,15 @@ CREATE TABLE `mellivorines_blog_comment` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `fk_comment_user` (`user_id`) USING BTREE,
   KEY `fk_comment_parent` (`parent_id`) USING BTREE,
-  CONSTRAINT `fk_comment_parent_id` FOREIGN KEY (`parent_id`) REFERENCES `mellivorines_blog_comment` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
+  CONSTRAINT `fk_comment_parent_id` FOREIGN KEY (`parent_id`) REFERENCES `mellivorines_blog_comment` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT,
+  CONSTRAINT `fk_comment_user_id` FOREIGN KEY (`user_id`) REFERENCES `mellivorines_blog_user_info` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
 ) ENGINE=InnoDB AUTO_INCREMENT=1032 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci ROW_FORMAT=DYNAMIC COMMENT='表-内容';
 
 -- ----------------------------
 -- Records of mellivorines_blog_comment
 -- ----------------------------
 BEGIN;
+INSERT INTO `mellivorines_blog_comment` (`id`, `user_id`, `topic_id`, `comment_content`, `reply_user_id`, `parent_id`, `type`, `is_delete`, `is_review`, `create_time`, `update_time`) VALUES (1, 1025, 68, '测试评论', 1, NULL, 5, 0, 1, '2023-12-03 20:12:05', '2023-12-03 20:12:08');
 COMMIT;
 
 -- ----------------------------
@@ -178,12 +210,15 @@ CREATE TABLE `mellivorines_blog_friend_link` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE,
   KEY `fk_friend_link_user` (`link_name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci ROW_FORMAT=DYNAMIC COMMENT='表-友链';
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci ROW_FORMAT=DYNAMIC COMMENT='表-友链';
 
 -- ----------------------------
 -- Records of mellivorines_blog_friend_link
 -- ----------------------------
 BEGIN;
+INSERT INTO `mellivorines_blog_friend_link` (`id`, `link_name`, `link_avatar`, `link_address`, `link_intro`, `create_time`, `update_time`) VALUES (49, '个人博客', 'https://www.ixinjiu.cn/img2.jpg', 'https://www.wuweijan.cn/', 'qweqw', '2023-09-16 22:45:43', '2023-09-16 22:45:43');
+INSERT INTO `mellivorines_blog_friend_link` (`id`, `link_name`, `link_avatar`, `link_address`, `link_intro`, `create_time`, `update_time`) VALUES (51, '忻辰', 'https://www.ixinjiu.cn/img2.jpg', 'https://www.ixinjiu.cn', '心心念念，暮暮晨晨', '2023-09-18 04:13:05', '2023-09-18 04:13:05');
+INSERT INTO `mellivorines_blog_friend_link` (`id`, `link_name`, `link_avatar`, `link_address`, `link_intro`, `create_time`, `update_time`) VALUES (52, 'LinYD', 'http://thirdqq.qlogo.cn/g?b=oidb&k=MZGdfr2siaeicUgib1JbicZWbQ&s=40&t=1653931352', 'http://linyyd.top/', 'LinYD的个人博客', '2023-09-18 04:13:41', '2023-09-18 04:13:41');
 COMMIT;
 
 -- ----------------------------
@@ -352,6 +387,8 @@ CREATE TABLE `mellivorines_blog_photo` (
 -- Records of mellivorines_blog_photo
 -- ----------------------------
 BEGIN;
+INSERT INTO `mellivorines_blog_photo` (`id`, `album_id`, `photo_name`, `photo_desc`, `photo_src`, `is_delete`, `create_time`, `update_time`) VALUES (1, 1, '我的', '大杀手', 'http://127.0.0.1:8080/local-plus/markdown/6532978126365f4187334e7f.jpeg', 0, '2023-10-20 23:08:42', '2023-10-20 23:08:47');
+INSERT INTO `mellivorines_blog_photo` (`id`, `album_id`, `photo_name`, `photo_desc`, `photo_src`, `is_delete`, `create_time`, `update_time`) VALUES (2, 1, '阿是大叔', '大厦', 'http://127.0.0.1:8080/local-plus/photos/656a9324a2f42ab815604db5.jpg', 0, '2023-12-02 10:15:55', '2023-12-02 10:15:59');
 COMMIT;
 
 -- ----------------------------
@@ -374,6 +411,7 @@ CREATE TABLE `mellivorines_blog_photo_album` (
 -- Records of mellivorines_blog_photo_album
 -- ----------------------------
 BEGIN;
+INSERT INTO `mellivorines_blog_photo_album` (`id`, `album_name`, `album_desc`, `album_cover`, `is_delete`, `status`, `create_time`, `update_time`) VALUES (1, '我的', '个人相片', 'http://127.0.0.1:8080/local-plus/markdown/6532978126365f4187334e7f.jpeg', 0, 0, '2023-10-20 23:03:39', '2023-10-20 23:03:43');
 COMMIT;
 
 -- ----------------------------
@@ -829,7 +867,9 @@ CREATE TABLE `mellivorines_blog_tag` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `mellivorines_blog_tag` (`id`, `tag_name`, `create_time`, `update_time`) VALUES (1, '数据库', '2023-08-18 19:13:32', '2023-08-18 19:13:35');
-INSERT INTO `mellivorines_blog_tag` (`id`, `tag_name`, `create_time`, `update_time`) VALUES (2, 'Mysql', '2023-08-18 20:17:50', '2023-08-18 20:17:53');
+INSERT INTO `mellivorines_blog_tag` (`id`, `tag_name`, `create_time`, `update_time`) VALUES (2, '测试', '2023-08-18 20:17:50', '2023-08-18 20:17:53');
+INSERT INTO `mellivorines_blog_tag` (`id`, `tag_name`, `create_time`, `update_time`) VALUES (3, 'asdhgaas', '2023-12-07 19:30:34', '2023-12-07 19:30:37');
+INSERT INTO `mellivorines_blog_tag` (`id`, `tag_name`, `create_time`, `update_time`) VALUES (4, 'asdjagsdadadwq', '2023-12-07 19:30:49', '2023-12-07 19:30:52');
 COMMIT;
 
 -- ----------------------------
@@ -848,12 +888,14 @@ CREATE TABLE `mellivorines_blog_talk` (
   PRIMARY KEY (`id`) USING BTREE,
   KEY `fk_talk_user_id` (`user_id`),
   CONSTRAINT `fk_talk_user_id` FOREIGN KEY (`user_id`) REFERENCES `mellivorines_blog_user_info` (`id`) ON DELETE CASCADE ON UPDATE RESTRICT
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci ROW_FORMAT=DYNAMIC COMMENT='表-说说';
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_german2_ci ROW_FORMAT=DYNAMIC COMMENT='表-说说';
 
 -- ----------------------------
 -- Records of mellivorines_blog_talk
 -- ----------------------------
 BEGIN;
+INSERT INTO `mellivorines_blog_talk` (`id`, `user_id`, `content`, `images`, `is_top`, `status`, `create_time`, `update_time`) VALUES (68, 1025, '想要的东西就自己去获取,by 引入，绽放，辐射。', 'http://xinchen-blog123.oss-cn-shanghai.aliyuncs.com/avatar/7b6a50d7fa6c13053e34a8ff1942cb76.jpg', 0, 0, '2023-12-02 15:25:23', '2023-12-02 15:25:23');
+INSERT INTO `mellivorines_blog_talk` (`id`, `user_id`, `content`, `images`, `is_top`, `status`, `create_time`, `update_time`) VALUES (69, 1025, '想要的东西就自己去获取,assjhkcgsdcsdavfdsa。', 'http://xinchen-blog123.oss-cn-shanghai.aliyuncs.com/avatar/7b6a50d7fa6c13053e34a8ff1942cb76.jpg', 0, 0, '2023-12-02 15:33:15', '2023-12-02 15:33:15');
 COMMIT;
 
 -- ----------------------------
@@ -925,8 +967,8 @@ CREATE TABLE `mellivorines_blog_user_info` (
 -- Records of mellivorines_blog_user_info
 -- ----------------------------
 BEGIN;
-INSERT INTO `mellivorines_blog_user_info` (`id`, `email`, `nickname`, `avatar`, `intro`, `website`, `is_subscribe`, `is_disable`, `create_time`, `update_time`) VALUES (1, 'meikaihong015@163.com', '演示账号', 'https://static.linhaojun.top/avatar/2af2e2db20740e712f0a011a6f8c9af5.jpg', '演示账号的用户简介', 'https://www.linhaojun.top', 0, 0, '2022-08-19 21:42:04', '2022-08-24 17:11:35');
-INSERT INTO `mellivorines_blog_user_info` (`id`, `email`, `nickname`, `avatar`, `intro`, `website`, `is_subscribe`, `is_disable`, `create_time`, `update_time`) VALUES (1025, 'lilinxi015@163.com', '用户', 'https://static.linhaojun.top/avatar/2af2e2db20740e712f0a011a6f8c9af5.jpg', NULL, NULL, NULL, 0, '2023-09-02 23:51:56', '2023-09-02 23:51:56');
+INSERT INTO `mellivorines_blog_user_info` (`id`, `email`, `nickname`, `avatar`, `intro`, `website`, `is_subscribe`, `is_disable`, `create_time`, `update_time`) VALUES (1, 'meikaihong015@163.com', '演示账号', 'http://127.0.0.1:8080/local-plus/photos/656a9324a2f42ab815604db5.jpg', '演示账号的用户简介', 'http://localhost:5173/', 0, 0, '2022-08-19 21:42:04', '2022-08-24 17:11:35');
+INSERT INTO `mellivorines_blog_user_info` (`id`, `email`, `nickname`, `avatar`, `intro`, `website`, `is_subscribe`, `is_disable`, `create_time`, `update_time`) VALUES (1025, 'lilinxi015@163.com', '用户', 'http://127.0.0.1:8080/local-plus/photos/656a9324a2f42ab815604db5.jpg', '阿萨德和v啊大', 'http://localhost:5173/', 0, 0, '2023-09-02 23:51:56', '2023-09-02 23:51:56');
 COMMIT;
 
 -- ----------------------------
@@ -958,7 +1000,7 @@ COMMIT;
 DROP TABLE IF EXISTS `mellivorines_blog_website_config`;
 CREATE TABLE `mellivorines_blog_website_config` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `config` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_german2_ci DEFAULT NULL COMMENT '配置信息',
+  `config` varchar(2000) CHARACTER SET utf8mb4 COLLATE utf8mb4_german2_ci NOT NULL COMMENT '配置信息',
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
@@ -968,7 +1010,7 @@ CREATE TABLE `mellivorines_blog_website_config` (
 -- Records of mellivorines_blog_website_config
 -- ----------------------------
 BEGIN;
-INSERT INTO `mellivorines_blog_website_config` (`id`, `config`, `create_time`, `update_time`) VALUES (1, '{\"alipayQRCode\":\"https://static.linhaojun.top/config/da4c6d8c13f66a8dd6716ddb48d73299.jpg\",\"author\":\"花未眠\",\"authorAvatar\":\"https://static.linhaojun.top/config/6e4f47f4bb66d2d30722d20e789b220e.jpg\",\"authorIntro\":\"一个疯狂的coder\",\"beianNumber\":\"苏ICP备2022012376号\",\"csdn\":\"\",\"englishName\":\"huaweimian\",\"gitee\":\"https://gitee.com/linhaojun\",\"github\":\"https://github.com/linhaojun857\",\"isCommentReview\":0,\"isEmailNotice\":1,\"isReward\":1,\"juejin\":\"\",\"logo\":\"https://static.linhaojun.top/config/cc36e9fa5aeb214e41495c1e2268f2db.png\",\"multiLanguage\":1,\"name\":\"花未眠\",\"notice\":\"代码已经开源，如果你感觉还行就给一个star吧。。。\",\"qq\":\"\",\"qqLogin\":1,\"stackoverflow\":\"\",\"touristAvatar\":\"https://static.linhaojun.top/config/2af2e2db20740e712f0a011a6f8c9af5.jpg\",\"twitter\":\"\",\"userAvatar\":\"https://static.linhaojun.top/config/0af1901da1e64dfb99bb61db21e716c4.jpeg\",\"weChat\":\"\",\"websiteCreateTime\":\"2022-08-19\",\"weiXinQRCode\":\"https://static.linhaojun.top/config/ed47edae605f74306f751c6fba9f14bd.png\",\"weibo\":\"\",\"zhihu\":\"\"}', '2022-07-24 12:05:33', '2022-08-20 12:48:28');
+INSERT INTO `mellivorines_blog_website_config` (`id`, `config`, `create_time`, `update_time`) VALUES (1, '{\"alipayQRCode\":\"https://i.postimg.cc/N08FHz01/Hippopx.jpg\",\"author\":\"北岸、江边鸟\",\"authorAvatar\":\"https://i.postimg.cc/N08FHz01/Hippopx.jpg\",\"authorIntro\":\"轻舟已过万重山\",\"beianNumber\":\"贵ICP备2023012376号\",\"csdn\":\"\",\"englishName\":\"mellivorines\",\"gitee\":\"https://gitee.com/mellivorines\",\"github\":\"https://github.com/mellivorines\",\"isCommentReview\":0,\"isEmailNotice\":1,\"isReward\":1,\"juejin\":\"\",\"logo\":\"https://i.postimg.cc/N08FHz01/Hippopx.jpg\",\"multiLanguage\":1,\"name\":\"北岸、江边鸟\",\"notice\":\"代码已经开源，如果你感觉还行就给一个star吧。。。\",\"qq\":\"\",\"qqLogin\":1,\"stackoverflow\":\"\",\"touristAvatar\":\"https://i.postimg.cc/N08FHz01/Hippopx.jpg\",\"twitter\":\"\",\"userAvatar\":\"https://i.postimg.cc/N08FHz01/Hippopx.jpg\",\"weChat\":\"\",\"websiteCreateTime\":\"2022-08-19\",\"weiXinQRCode\":\"https://i.postimg.cc/N08FHz01/Hippopx.jpg\"\"weibo\":\"\",\"zhihu\":\"\"}', '2022-07-24 12:05:33', '2022-08-20 12:48:28');
 COMMIT;
 
 -- ----------------------------
