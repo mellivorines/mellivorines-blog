@@ -133,7 +133,7 @@ spring:
 
   elasticsearch:
     uris:
-      - https://124.220.152.5:9200
+      - ${elasticsearch_host}
 
 # springdoc-openapi项目配置
 springdoc:
