@@ -1,6 +1,8 @@
 package io.github.mellivorines.blog.web
 
+//import io.github.mellivorines.blog.config.elasticsearch.ElasticsearchMapper
 import io.github.mellivorines.blog.model.ResultVO
+import io.github.mellivorines.blog.model.dto.ArticleOutput
 import io.github.mellivorines.blog.model.dto.TopAndFeatured
 import io.github.mellivorines.blog.model.entity.*
 import io.github.mellivorines.blog.model.entity.dto.ArticleInput
@@ -10,11 +12,10 @@ import io.github.mellivorines.salamanderblog.out.ConditionVO
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.babyfish.jimmer.spring.repository.fetchPage
 import org.babyfish.jimmer.sql.kt.ast.expression.eq
+import org.babyfish.jimmer.sql.kt.ast.expression.ilike
+import org.babyfish.jimmer.sql.kt.ast.expression.or
 import org.springframework.data.domain.Page
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 import java.time.format.DateTimeFormatter
 
 
@@ -29,7 +30,8 @@ import java.time.format.DateTimeFormatter
 @RestController
 @RequestMapping("/api")
 class ArticleController(
-    private val articleRepository: ArticleRepository
+    private val articleRepository: ArticleRepository,
+//    private val esMapper: ElasticsearchMapper
 ) {
     @GetMapping("/articles/topAndFeatured")
     fun topAndFeatured(): ResultVO<TopAndFeatured> {
@@ -72,12 +74,23 @@ class ArticleController(
     }
 
     @GetMapping("/articles/{articleId}")
-    fun articlesById(@PathVariable articleId: Int): ResultVO<ArticleInput> {
+    fun articlesById(@PathVariable articleId: Int): ResultVO<ArticleOutput> {
         val all = articleRepository.sql.createQuery(Article::class) {
-            where(table.id eq articleId)
+            orderBy(table.id)
             select(table.fetch(ArticleInput::class))
-        }.execute()[0]
-        return ResultVO.success(all)
+        }.execute()
+        val article = all.find { it.id == articleId }
+
+        val indexOf = all.indexOf(article)
+        var preArticleCard: ArticleInput? = null
+        var nextArticleCard: ArticleInput? = null
+        if (indexOf - 1 >= 0) {
+            preArticleCard = all[indexOf - 1]
+        }
+        if (indexOf + 1 >= all.size-1) {
+            nextArticleCard = all[indexOf + 1]
+        }
+        return ResultVO.success(article?.let { ArticleOutput(it, preArticleCard, nextArticleCard) })
     }
 
     @GetMapping("/articles/tagId")
@@ -105,5 +118,31 @@ class ArticleController(
         groupBy.forEach { list.add(ArchivesVO(it.key, it.value)) }
         return ResultVO.success(list)
     }
+
+    @GetMapping("/articles/search")
+    fun listArticlesBySearch(@RequestParam(value = "keywords") keywords: String): ResultVO<List<ArticleInput>> {
+        val execute = articleRepository.sql.createQuery(Article::class) {
+            where(
+                or(
+                    table.articleTitle ilike keywords,
+                    table.articleContent ilike keywords
+                )
+            )
+            select(table.fetch(ArticleInput::class))
+        }.execute()
+        return ResultVO.success(execute)
+    }
+
+//    @GetMapping("/es/test")
+//    fun test(): ResultVO<MutableIterable<ArticleSearchDTO>> {
+//        val findAll = articleRepository.findAll()
+//        val list = mutableListOf<ArticleSearchDTO>()
+//        findAll.forEach {
+//            list.add(ArticleSearchDTO(it.id, it.articleTitle, it.articleContent, it.isDelete, it.status))
+//        }
+//        esMapper.deleteAll()
+//        return ResultVO.success(esMapper.saveAll(list))
+//    }
+
 
 }

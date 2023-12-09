@@ -20,10 +20,10 @@ data class ArticleSearchDTO(
     @Id
     private val id: Int,
 
-    @Field(type = FieldType.Text, analyzer = "ik_max_word")
+    @Field(analyzer = "ik_max_word",searchAnalyzer = "ik_smart",store = true,type = FieldType.Text)
     private val articleTitle: String,
 
-    @Field(type = FieldType.Text, analyzer = "ik_max_word")
+    @Field(analyzer = "ik_max_word",searchAnalyzer = "ik_smart",store = true,type = FieldType.Text)
     private val articleContent: String,
 
     @Field(type = FieldType.Integer)
