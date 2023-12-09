@@ -290,8 +290,8 @@ export default defineComponent({
         }
         commonStore.setHeaderImage(data.data.articleCover)
         new Promise((resolve) => {
-          data.data.articleContent = markdownToHtml(data.data.articleContent)
-          resolve(data.data)
+          data.data.base.articleContent = markdownToHtml(data.data.base.articleContent)
+          resolve(data.data.base)
         }).then((article: any) => {
           reactiveData.article = article
           reactiveData.wordNum = Math.round(deleteHTMLTag(article.articleContent).length / 100) / 10 + 'k'
@@ -302,24 +302,29 @@ export default defineComponent({
             initTocbot()
           })
         })
-        new Promise((resolve) => {
-          data.data.preArticleCard.articleContent = markdownToHtml(data.data.preArticleCard.articleContent)
-            .replace(/<\/?[^>]*>/g, '')
-            .replace(/[|]*\n/, '')
-            .replace(/&npsp;/gi, '')
-          resolve(data.data.preArticleCard)
-        }).then((preArticleCard: any) => {
-          reactiveData.preArticleCard = preArticleCard
-        })
-        new Promise((resolve) => {
-          data.data.nextArticleCard.articleContent = markdownToHtml(data.data.nextArticleCard.articleContent)
-            .replace(/<\/?[^>]*>/g, '')
-            .replace(/[|]*\n/, '')
-            .replace(/&npsp;/gi, '')
-          resolve(data.data.nextArticleCard)
-        }).then((nextArticleCard) => {
-          reactiveData.nextArticleCard = nextArticleCard
-        })
+        if (data.data.preArticleCard!==null){
+          new Promise((resolve) => {
+            data.data.preArticleCard.articleContent = markdownToHtml(data.data.preArticleCard.articleContent)
+                .replace(/<\/?[^>]*>/g, '')
+                .replace(/[|]*\n/, '')
+                .replace(/&npsp;/gi, '')
+            resolve(data.data.preArticleCard)
+          }).then((preArticleCard: any) => {
+            reactiveData.preArticleCard = preArticleCard
+          })
+        }
+        if(data.data.nextArticleCard !== null){
+          new Promise((resolve) => {
+            data.data.nextArticleCard.articleContent = markdownToHtml(data.data.nextArticleCard.articleContent)
+                .replace(/<\/?[^>]*>/g, '')
+                .replace(/[|]*\n/, '')
+                .replace(/&npsp;/gi, '')
+            resolve(data.data.nextArticleCard)
+          }).then((nextArticleCard) => {
+            reactiveData.nextArticleCard = nextArticleCard
+          })
+        }
+
       })
     }
     const fetchComments = () => {
