@@ -10,13 +10,12 @@ import org.springframework.stereotype.Component
 
 
 /**
- * @Description:
+ * @Description:邮件通知队列
  *
  * @author lilinxi
  * @version 1.0.0
  * @since 2023/8/19
  */
-
 @Component
 @RabbitListener(queues = [EMAIL_QUEUE])
 class CommentNoticeConsumer(private val emailUtil: EmailUtil) {
