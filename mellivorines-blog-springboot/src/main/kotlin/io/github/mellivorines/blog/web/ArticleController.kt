@@ -87,7 +87,7 @@ class ArticleController(
         if (indexOf - 1 >= 0) {
             preArticleCard = all[indexOf - 1]
         }
-        if (indexOf + 1 >= all.size - 1) {
+        if (indexOf + 1 <= all.size - 1) {
             nextArticleCard = all[indexOf + 1]
         }
         return ResultVO.success(article?.let { ArticleOutput(it, preArticleCard, nextArticleCard) })
