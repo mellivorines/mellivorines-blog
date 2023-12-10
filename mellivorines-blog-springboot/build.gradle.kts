@@ -39,7 +39,6 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
     implementation("org.springframework.boot:spring-boot-starter-mail")
     implementation("org.springframework.boot:spring-boot-starter-amqp")
-//    implementation("org.springframework.boot:spring-boot-starter-data-elasticsearch")
     runtimeOnly("com.mysql:mysql-connector-j")
     implementation("com.auth0:java-jwt:4.3.0")
 
