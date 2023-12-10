@@ -4,7 +4,6 @@ import com.alibaba.fastjson2.JSON
 import io.github.mellivorines.blog.constant.CommonConstant.MAXWELL_QUEUE
 import io.github.mellivorines.blog.config.elasticsearch.ElasticsearchMapper
 import io.github.mellivorines.blog.config.elasticsearch.modle.ArticleSearchDTO
-import io.github.mellivorines.blog.config.elasticsearch.modle.MaxwellDataDTO
 import io.github.mellivorines.blog.model.entity.Article
 import org.springframework.amqp.rabbit.annotation.RabbitHandler
 import org.springframework.amqp.rabbit.annotation.RabbitListener

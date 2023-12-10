@@ -1,4 +1,4 @@
-package io.github.mellivorines.blog.config.elasticsearch.modle
+package io.github.mellivorines.blog.config.rabbitmq
 
 
 /**

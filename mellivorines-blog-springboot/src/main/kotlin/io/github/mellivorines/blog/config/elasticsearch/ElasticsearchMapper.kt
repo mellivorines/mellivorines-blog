@@ -1,7 +1,6 @@
 package io.github.mellivorines.blog.config.elasticsearch
 
 import io.github.mellivorines.blog.config.elasticsearch.modle.ArticleSearchDTO
-import io.github.mellivorines.blog.model.entity.Article
 import org.springframework.data.domain.Pageable
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 
