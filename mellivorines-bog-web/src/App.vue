@@ -94,7 +94,6 @@ export default defineComponent({
     }
     const fetchWebsiteConfig = () => {
       api.getWebsiteConfig().then(({ data }) => {
-        console.log("websiteInfo:",data.data)
         appStore.viewCount = data.data.viewCount
         appStore.articleCount = data.data.articleCount
         appStore.talkCount = data.data.talkCount
