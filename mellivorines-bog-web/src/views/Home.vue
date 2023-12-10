@@ -160,7 +160,6 @@ export default defineComponent({
           })
           .then(({ data }) => {
             if (data) {
-              console.log(data.data.content)
               data.data.content.forEach((item: any) => {
                 item.articleContent = markdownToHtml(item.articleContent)
                   .replace(/<\/?[^>]*>/g, '')

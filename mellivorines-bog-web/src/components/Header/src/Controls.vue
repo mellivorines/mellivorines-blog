@@ -186,7 +186,6 @@ export default defineComponent({
       params.append('password', loginInfo.password)
       api.login(params).then(({ data }) => {
         if (data.code==200) {
-          console.log("data",data)
           userStore.userInfo = data.data
           sessionStorage.setItem('token', data.data.token)
           userStore.token = data.data.token

@@ -60,7 +60,6 @@ export default {
     return axios.get('/api/archives/all', { params: params })
   },
   login: (params: any) => {
-    console.log(params)
     return axios.post('/api/auth/login', params)
   },
   saveComment: (params: any) => {
