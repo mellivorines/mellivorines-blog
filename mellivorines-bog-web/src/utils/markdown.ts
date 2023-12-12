@@ -6,7 +6,7 @@ import MarkdownItSup from "markdown-it-sup";
 import mermaidPlugin from "@agoose77/markdown-it-mermaid";
 import mermaidItKatex from "@iktakahiro/markdown-it-katex";
 import mermaidItKatexExternal from "markdown-it-katex-external";
-import MarkdownItContainer from "markdown-it-container";
+// import MarkdownItContainer from "markdown-it-container";
 import MarkdownItMark from "markdown-it-mark";
 import MarkdownItEmoji from "markdown-it-emoji";
 import MarkdownItIns from "markdown-it-ins";
@@ -47,7 +47,7 @@ export default function markdownToHtml(content: any) {
         breaks: true,
         xhtmlOut: true,
         typographer: true,
-        highlight: function (str, lang) {
+        highlight: function (str:any, lang:string) {
             if (lang && hljs.getLanguage(lang)) {
                 try {
                     return (
