@@ -6,13 +6,13 @@ import localStorageAvailable from '../utils/localStorageAvailable';
 import {isValidToken, setSession} from './utils';
 import {ActionMapType, AuthStateType, AuthUserType, JWTContextType} from './types';
 
-// ----------------------------------------------------------------------
+
 
 // NOTE:
 // We only build demo at basic level.
 // Customer will need to do some extra handling yourself if you want to extend the logic and other features...
 
-// ----------------------------------------------------------------------
+
 
 enum Types {
     INITIAL = 'INITIAL',
@@ -37,7 +37,7 @@ type Payload = {
 
 type ActionsType = ActionMapType<Payload>[keyof ActionMapType<Payload>];
 
-// ----------------------------------------------------------------------
+
 
 const initialState: AuthStateType = {
     isInitialized: false,
@@ -77,11 +77,11 @@ const reducer = (state: AuthStateType, action: ActionsType) => {
     return state;
 };
 
-// ----------------------------------------------------------------------
+
 
 export const AuthContext = createContext<JWTContextType | null>(null);
 
-// ----------------------------------------------------------------------
+
 
 type AuthProviderProps = {
     children: React.ReactNode;

@@ -6,7 +6,7 @@ import LoadingScreen from '../components/loading-screen';
 import Login from '../pages/LoginPage';
 import { useAuthContext } from './useAuthContext';
 
-// ----------------------------------------------------------------------
+
 
 type AuthGuardProps = {
   children: ReactNode;

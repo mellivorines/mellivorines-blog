@@ -5,7 +5,7 @@ import LoadingScreen from '../components/loading-screen';
 //
 import { useAuthContext } from './useAuthContext';
 
-// ----------------------------------------------------------------------
+
 
 type GuestGuardProps = {
   children: ReactNode;

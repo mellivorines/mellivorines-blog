@@ -1,4 +1,4 @@
-// ----------------------------------------------------------------------
+
 
 export type ActionMapType<M extends { [index: string]: any }> = {
   [Key in keyof M]: M[Key] extends undefined
@@ -19,7 +19,7 @@ export type AuthStateType = {
   user: AuthUserType;
 };
 
-// ----------------------------------------------------------------------
+
 
 export type JWTContextType = {
   method: string;

@@ -15,7 +15,7 @@ function jwtDecode(token: string) {
   return JSON.parse(jsonPayload);
 }
 
-// ----------------------------------------------------------------------
+
 
 export const isValidToken = (accessToken: string) => {
   if (!accessToken) {
@@ -29,7 +29,7 @@ export const isValidToken = (accessToken: string) => {
   return decoded.exp > currentTime;
 };
 
-// ----------------------------------------------------------------------
+
 
 export const tokenExpired = (exp: number) => {
   // eslint-disable-next-line prefer-const
@@ -52,7 +52,7 @@ export const tokenExpired = (exp: number) => {
   }, timeLeft);
 };
 
-// ----------------------------------------------------------------------
+
 
 export const setSession = (accessToken: string | null) => {
   if (accessToken) {

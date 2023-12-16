@@ -8,7 +8,7 @@ import { ForbiddenIllustration } from '../assets/illustrations';
 //
 import { useAuthContext } from './useAuthContext';
 
-// ----------------------------------------------------------------------
+
 
 type RoleBasedGuardProp = {
   hasContent?: boolean;
