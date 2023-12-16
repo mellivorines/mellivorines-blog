@@ -3,7 +3,7 @@ import { ThemeProvider, createTheme, useTheme } from '@mui/material/styles';
 //
 import useLocales from './useLocales';
 
-// ----------------------------------------------------------------------
+
 
 type Props = {
   children: React.ReactNode;
