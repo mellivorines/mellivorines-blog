@@ -1,9 +1,5 @@
-// routes
 import { PATH_AUTH } from '../routes/paths';
-// utils
 import axios from '../utils/axios';
-
-// ----------------------------------------------------------------------
 
 function jwtDecode(token: string) {
   const base64Url = token.split('.')[1];
