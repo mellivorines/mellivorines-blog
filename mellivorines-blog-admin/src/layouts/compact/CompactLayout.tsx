@@ -1,14 +1,9 @@
 import { Outlet } from 'react-router-dom';
-// @mui
 import { Stack, Container } from '@mui/material';
-// hooks
 import useOffSetTop from '../../hooks/useOffSetTop';
-// config
 import { HEADER } from '../../config-global';
-//
 import Header from './Header';
 
-// ----------------------------------------------------------------------
 
 export default function CompactLayout() {
   const isOffset = useOffSetTop(HEADER.H_MAIN_DESKTOP);

@@ -2,7 +2,6 @@ import { useState, memo, useEffect } from 'react';
 import parse from 'autosuggest-highlight/parse';
 import match from 'autosuggest-highlight/match';
 import { useNavigate, useLocation } from 'react-router-dom';
-// @mui
 import { alpha, styled } from '@mui/material/styles';
 import {
   Box,
@@ -14,18 +13,14 @@ import {
   InputAdornment,
   ClickAwayListener,
 } from '@mui/material';
-// utils
 import { bgBlur } from '../../../utils/cssStyles';
 import flattenArray from '../../../utils/flattenArray';
-// components
 import Iconify from '../../../components/iconify';
 import { NavListProps } from '../../../components/nav-section';
 import { IconButtonAnimate } from '../../../components/animate';
 import SearchNotFound from '../../../components/search-not-found';
-//
 import NavConfig from '../nav/config-navigation';
 
-// ----------------------------------------------------------------------
 
 const APPBAR_MOBILE = 64;
 const APPBAR_DESKTOP = 92;
@@ -238,7 +233,6 @@ function Searchbar() {
 
 export default memo(Searchbar);
 
-// ----------------------------------------------------------------------
 
 type ItemProps = {
   path: string[];
@@ -270,7 +264,6 @@ function splitPath(array: NavListProps[], key: string) {
   return null;
 }
 
-// ----------------------------------------------------------------------
 
 function handleLoop(array: any, subheader?: string) {
   return array?.map((list: any) => ({

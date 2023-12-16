@@ -1,19 +1,14 @@
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
-// @mui
 import { Box } from '@mui/material';
-// hooks
 import useResponsive from '../../hooks/useResponsive';
-// components
 import { useSettingsContext } from '../../components/settings';
-//
 import Main from './Main';
 import Header from './header';
 import NavMini from './nav/NavMini';
 import NavVertical from './nav/NavVertical';
 import NavHorizontal from './nav/NavHorizontal';
 
-// ----------------------------------------------------------------------
 
 export default function DashboardLayout() {
   const { themeLayout } = useSettingsContext();

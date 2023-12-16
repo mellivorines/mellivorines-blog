@@ -1,6 +1,5 @@
 import { noCase } from 'change-case';
 import { useState } from 'react';
-// @mui
 import {
   Box,
   Stack,
@@ -17,24 +16,20 @@ import {
   ListItemAvatar,
   ListItemButton,
 } from '@mui/material';
-// utils
 import { fToNow } from '../../../utils/formatTime';
-// _mock_
 import { _notifications } from '../../../_mock/arrays';
-// components
 import Iconify from '../../../components/iconify';
 import Scrollbar from '../../../components/scrollbar';
 import MenuPopover from '../../../components/menu-popover';
 import { IconButtonAnimate } from '../../../components/animate';
 
-// ----------------------------------------------------------------------
 
 export default function NotificationsPopover() {
   const [openPopover, setOpenPopover] = useState<HTMLElement | null>(null);
 
   const [notifications, setNotifications] = useState(_notifications);
 
-  const totalUnRead = notifications.filter((item) => item.isUnRead === true).length;
+  const totalUnRead = notifications.filter((item) => item.isUnRead).length;
 
   const handleOpenPopover = (event: React.MouseEvent<HTMLElement>) => {
     setOpenPopover(event.currentTarget);
@@ -126,7 +121,6 @@ export default function NotificationsPopover() {
   );
 }
 
-// ----------------------------------------------------------------------
 
 type NotificationItemProps = {
   id: string;
