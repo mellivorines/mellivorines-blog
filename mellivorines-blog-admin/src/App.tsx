@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// i18n
+import './locales/i18n';
 
-function App() {
-  const [count, setCount] = useState(0)
+// scroll bar
+import 'simplebar/src/simplebar.css';
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+// lazy image
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
+// ----------------------------------------------------------------------
+
+import { BrowserRouter } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+// routes
+import Router from './routes';
+// theme
+import ThemeProvider from './theme';
+// locales
+import ThemeLocalization from './locales';
+// components
+import SnackbarProvider from './components/snackbar';
+import ScrollToTop from './components/scroll-to-top';
+import { MotionLazyContainer } from './components/animate';
+import { ThemeSettings, SettingsProvider } from './components/settings';
+
+// Check our docs
+// https://docs.minimals.cc/authentication/ts-version
+
+import { AuthProvider } from './auth/JwtContext';
+
+// ----------------------------------------------------------------------
+
+export default function App() {
+    return (
+        <AuthProvider>
+            <HelmetProvider>
+                <SettingsProvider>
+                    <BrowserRouter>
+                        <ScrollToTop />
+                        <MotionLazyContainer>
+                            <ThemeProvider>
+                                <ThemeSettings>
+                                    <ThemeLocalization>
+                                        <SnackbarProvider>
+                                            <Router />
+                                        </SnackbarProvider>
+                                    </ThemeLocalization>
+                                </ThemeSettings>
+                            </ThemeProvider>
+                        </MotionLazyContainer>
+                    </BrowserRouter>
+                </SettingsProvider>
+            </HelmetProvider>
+        </AuthProvider>
+    );
 }
-
-export default App
