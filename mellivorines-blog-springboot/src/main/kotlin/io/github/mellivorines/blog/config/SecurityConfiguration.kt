@@ -6,6 +6,7 @@ import io.github.mellivorines.blog.model.ResultVO
 import io.github.mellivorines.blog.model.vo.AuthorizeVO
 import io.github.mellivorines.blog.utils.JwtUtils
 import io.github.mellivorines.blog.model.entity.UserAuth
+import io.github.mellivorines.blog.model.vo.UserInfoVO
 import io.github.mellivorines.blog.service.UserAuthService
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
@@ -50,7 +51,7 @@ class SecurityConfiguration(
         return http
             .authorizeHttpRequests { conf ->
                 conf
-                    .requestMatchers("/local-plus/**","/api/**", "/error").permitAll()
+                    .requestMatchers("/local-plus/**", "/api/**", "/error").permitAll()
                     .requestMatchers("/swagger-ui/**", "/webjars/**", "/v3/api-docs/**").permitAll() // 放行开发文档资源目录
                     .requestMatchers("/doc.html").permitAll() // 放行开发文档资源目录
                     .requestMatchers("/static/**", "/resources/**").permitAll() // 其余的都需要权限校验
@@ -66,7 +67,7 @@ class SecurityConfiguration(
                             exceptionOrAuthentication
                         )
                     }
-                    .successHandler {request: HttpServletRequest, response: HttpServletResponse, exceptionOrAuthentication: Authentication ->
+                    .successHandler { request: HttpServletRequest, response: HttpServletResponse, exceptionOrAuthentication: Authentication ->
                         handleProcess(
                             request,
                             response,
@@ -156,11 +157,20 @@ class SecurityConfiguration(
                 writer.write(ResultVO.forbidden<String>("登录验证频繁，请稍后再试").asJsonString())
             } else {
                 val authorizeVO = AuthorizeVO(
-                        username = account.username,
-                        role = account.roles.stream().map { it.roleName }.toList(),
-                        token = jwt,
-                        expire = utils.expireTime()
-                    )
+                    user = UserInfoVO(
+                        account.userInfo.id,
+                        account.userInfo.email,
+                        account.userInfo.nickname,
+                        account.userInfo.avatar,
+                        account.userInfo.intro,
+                        account.userInfo.website,
+                        account.userInfo.isSubscribe,
+                        account.userInfo.isDisable
+                    ),
+                    role = account.roles.stream().map { it.roleName }.toList(),
+                    token = jwt,
+                    expire = utils.expireTime()
+                )
                 writer.write(ResultVO.success(authorizeVO).asJsonString())
             }
         }

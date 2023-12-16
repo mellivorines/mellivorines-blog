@@ -11,7 +11,7 @@ import java.util.*
  * @since 2023/8/28
  */
 data class AuthorizeVO(
-    var username: String,
+    var user: UserInfoVO,
     var role: List<String>,
     var token: String,
     var expire: Date
