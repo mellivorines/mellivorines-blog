@@ -1,13 +1,9 @@
 import { Navigate, useRoutes } from 'react-router-dom';
-// auth
 import AuthGuard from '../auth/AuthGuard';
 import GuestGuard from '../auth/GuestGuard';
-// layouts
 import CompactLayout from '../layouts/compact';
 import DashboardLayout from '../layouts/dashboard';
-// config
 import { PATH_AFTER_LOGIN } from '../config-global';
-//
 import {
   Page404,
   PageOne,
@@ -19,7 +15,6 @@ import {
   PageThree,
 } from './elements';
 
-// ----------------------------------------------------------------------
 
 export default function Router() {
   return useRoutes([

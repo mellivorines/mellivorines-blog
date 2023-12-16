@@ -1,8 +1,6 @@
 import { Suspense, lazy, ElementType } from 'react';
-// components
 import LoadingScreen from '../components/loading-screen';
 
-// ----------------------------------------------------------------------
 
 const Loadable = (Component: ElementType) => (props: any) =>
   (
@@ -11,7 +9,6 @@ const Loadable = (Component: ElementType) => (props: any) =>
     </Suspense>
   );
 
-// ----------------------------------------------------------------------
 
 export const LoginPage = Loadable(lazy(() => import('../pages/LoginPage')));
 
