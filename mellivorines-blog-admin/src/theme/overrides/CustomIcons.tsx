@@ -1,6 +1,5 @@
 import { SvgIcon, SvgIconProps } from '@mui/material';
 
-// ----------------------------------------------------------------------
 
 // CloseIcon
 export function CloseIcon(props: SvgIconProps) {

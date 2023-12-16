@@ -1,9 +1,7 @@
 import { Theme } from '@mui/material/styles';
 import { AlertProps } from '@mui/material';
-//
 import { ErrorIcon, InfoIcon, SuccessIcon, WarningIcon } from './CustomIcons';
 
-// ----------------------------------------------------------------------
 
 const COLORS = ['info', 'success', 'warning', 'error'] as const;
 

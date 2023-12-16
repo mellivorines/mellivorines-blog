@@ -3,7 +3,7 @@ import { alpha } from '@mui/material/styles';
 //
 import palette from './palette';
 
-// ----------------------------------------------------------------------
+
 
 interface CustomShadowOptions {
   z1: string;
@@ -35,7 +35,7 @@ declare module '@mui/material/styles' {
   }
 }
 
-// ----------------------------------------------------------------------
+
 
 const themeColor = palette('light');
 

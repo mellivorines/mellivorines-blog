@@ -17,7 +17,7 @@ import customShadows from './customShadows';
 import componentsOverride from './overrides';
 import GlobalStyles from './globalStyles';
 
-// ----------------------------------------------------------------------
+
 
 type Props = {
   children: React.ReactNode;

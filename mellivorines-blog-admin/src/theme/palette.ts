@@ -1,6 +1,6 @@
 import { alpha } from '@mui/material/styles';
 
-// ----------------------------------------------------------------------
+
 
 export type ColorSchema = 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error';
 
