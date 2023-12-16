@@ -5,15 +5,14 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   server: {
-    port: 3000,
-    open: true,
-    cors: true,
-    // proxy: {
-    //   '/api': {
-    //     target:,
-    //     changeOrigin: true,
-    //     rewrite: (path) => path.replace(/^\/api/, '')
-    //   }
-    // }
-  },
+    port:3000,
+    //用来配置跨域
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:8080',//目标服务器地址
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      },
+    }
+  }
 })
