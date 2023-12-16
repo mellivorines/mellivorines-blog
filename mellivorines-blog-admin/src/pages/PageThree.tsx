@@ -4,7 +4,7 @@ import { Container, Typography } from '@mui/material';
 // components
 import { useSettingsContext } from '../components/settings';
 
-// ----------------------------------------------------------------------
+
 
 export default function PageThree() {
   const { themeStretch } = useSettingsContext();

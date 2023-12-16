@@ -1,11 +1,7 @@
-// @mui
 import { Divider, IconButton, Stack } from '@mui/material';
-// auth
 import { useAuthContext } from '../../auth/useAuthContext';
-// components
 import Iconify from '../../components/iconify';
 
-// ----------------------------------------------------------------------
 
 export default function AuthWithSocial() {
   const { loginWithGoogle, loginWithGithub, loginWithTwitter } = useAuthContext();

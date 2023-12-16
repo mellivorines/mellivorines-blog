@@ -8,7 +8,7 @@ import { MotionContainer, varBounce } from '../components/animate';
 // assets
 import { PageNotFoundIllustration } from '../assets/illustrations';
 
-// ----------------------------------------------------------------------
+
 
 export default function Page404() {
   return (
