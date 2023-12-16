@@ -1,7 +1,7 @@
 import _mock from '../_mock';
 import { randomInArray } from '../utils';
 
-// ----------------------------------------------------------------------
+
 
 export const _carouselsMembers = [...Array(6)].map((_, index) => ({
   id: _mock.id(index),
@@ -10,7 +10,7 @@ export const _carouselsMembers = [...Array(6)].map((_, index) => ({
   avatar: `/assets/images/portraits/portrait_${index + 1}.jpg`,
 }));
 
-// ----------------------------------------------------------------------
+
 
 export const _faqs = [...Array(8)].map((_, index) => ({
   id: _mock.id(index),
@@ -19,7 +19,7 @@ export const _faqs = [...Array(8)].map((_, index) => ({
   detail: _mock.text.description(index),
 }));
 
-// ----------------------------------------------------------------------
+
 
 export const _addressBooks = [...Array(5)].map((_, index) => ({
   id: _mock.id(index),
@@ -30,14 +30,14 @@ export const _addressBooks = [...Array(5)].map((_, index) => ({
   isDefault: index === 0,
 }));
 
-// ----------------------------------------------------------------------
+
 
 export const _skills = [...Array(3)].map((_, index) => ({
   label: ['Development', 'Design', 'Marketing'][index],
   value: _mock.number.percent(index),
 }));
 
-// ----------------------------------------------------------------------
+
 
 export const _contacts = [...Array(20)].map((_, index) => ({
   id: _mock.id(index),
@@ -52,7 +52,7 @@ export const _contacts = [...Array(20)].map((_, index) => ({
   role: _mock.role(index),
 }));
 
-// ----------------------------------------------------------------------
+
 
 export const _notifications = [...Array(5)].map((_, index) => ({
   id: _mock.id(index),
@@ -76,7 +76,7 @@ export const _notifications = [...Array(5)].map((_, index) => ({
   isUnRead: [true, true, false, false, false][index],
 }));
 
-// ----------------------------------------------------------------------
+
 
 export const _mapContact = [
   {
@@ -91,7 +91,7 @@ export const _mapContact = [
   },
 ];
 
-// ----------------------------------------------------------------------
+
 
 export const _socials = [
   {

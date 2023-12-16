@@ -1,7 +1,7 @@
 import _mock from '../_mock';
 import { randomInArray } from '../utils';
 
-// ----------------------------------------------------------------------
+
 
 const GB = 1000000000 * 24;
 
@@ -88,7 +88,7 @@ const FILE_URL = [
   'https://www.cloud.com/s/c218bo6kjuqyv66/xl_david-blaine_component_tanzania_books.pdf',
 ];
 
-// ----------------------------------------------------------------------
+
 
 export const SHARED_PERSON = [...Array(24)].map((_, index) => ({
   id: _mock.id(index),
@@ -98,7 +98,7 @@ export const SHARED_PERSON = [...Array(24)].map((_, index) => ({
   permission: randomInArray(['view', 'edit']),
 }));
 
-// ----------------------------------------------------------------------
+
 
 export const _folders = FOLDER_NAME.map((folder, index) => ({
   id: `${_mock.id(index)}_folders`,
@@ -114,7 +114,7 @@ export const _folders = FOLDER_NAME.map((folder, index) => ({
   dateModified: _mock.time(index),
 }));
 
-// ----------------------------------------------------------------------
+
 
 export const _files = FILE_NAME.map((file, index) => ({
   id: `${_mock.id(index)}_files`,
@@ -129,6 +129,6 @@ export const _files = FILE_NAME.map((file, index) => ({
   dateModified: _mock.time(index),
 }));
 
-// ----------------------------------------------------------------------
+
 
 export const _allFiles = [..._folders, ..._files];

@@ -1,7 +1,7 @@
 import _mock from '../_mock';
 import { randomNumberRange, randomInArray } from '../utils';
 
-// ----------------------------------------------------------------------
+
 
 export const _appRelated = ['Chrome', 'Drive', 'Dropbox', 'Evernote', 'Github'].map(
   (name, index) => ({
@@ -20,7 +20,7 @@ export const _appRelated = ['Chrome', 'Drive', 'Dropbox', 'Evernote', 'Github'].
   })
 );
 
-// ----------------------------------------------------------------------
+
 
 export const _appInstalled = ['de', 'en', 'fr', 'kr', 'us'].map((country, index) => ({
   id: _mock.id(index),
@@ -31,7 +31,7 @@ export const _appInstalled = ['de', 'en', 'fr', 'kr', 'us'].map((country, index)
   flag: `/assets/icons/flags/ic_flag_${country}.svg`,
 }));
 
-// ----------------------------------------------------------------------
+
 
 export const _appAuthors = [...Array(3)].map((_, index) => ({
   id: _mock.id(index),
@@ -40,7 +40,7 @@ export const _appAuthors = [...Array(3)].map((_, index) => ({
   favourite: randomNumberRange(9999, 19999),
 }));
 
-// ----------------------------------------------------------------------
+
 
 export const _appInvoices = [...Array(5)].map((_, index) => ({
   id: `${Date.now() + index}`,
@@ -49,7 +49,7 @@ export const _appInvoices = [...Array(5)].map((_, index) => ({
   status: randomInArray(['paid', 'out_of_date', 'in_progress']),
 }));
 
-// ----------------------------------------------------------------------
+
 
 export const _appFeatured = [...Array(3)].map((_, index) => ({
   id: _mock.id(index),

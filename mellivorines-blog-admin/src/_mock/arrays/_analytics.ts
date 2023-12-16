@@ -1,7 +1,7 @@
 //
 import _mock from '../_mock';
 
-// ----------------------------------------------------------------------
+
 
 export const _analyticPost = [...Array(5)].map((_, index) => ({
   id: _mock.id(index),

@@ -1,7 +1,7 @@
 import _mock from '../_mock';
 import { randomNumberRange, randomInArray } from '../utils';
 
-// ----------------------------------------------------------------------
+
 
 export const _userAbout = {
   id: _mock.id(1),

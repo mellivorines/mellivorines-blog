@@ -33,7 +33,7 @@ export default function useResponsive(query: Query, start?: Value, end?: Value):
   return mediaOnly;
 }
 
-// ----------------------------------------------------------------------
+
 
 type BreakpointOrNull = Breakpoint | null;
 

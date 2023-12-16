@@ -1,6 +1,6 @@
 import _mock from '../_mock';
 
-// ----------------------------------------------------------------------
+
 
 export const _bankingContacts = [...Array(12)].map((_, index) => ({
   id: _mock.id(index),

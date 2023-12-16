@@ -3,7 +3,7 @@ import { add, subDays } from 'date-fns';
 import _mock from '../_mock';
 import { randomInArray, randomNumberRange } from '../utils';
 
-// ----------------------------------------------------------------------
+
 
 export const _invoices = [...Array(20)].map((_, index) => ({
   id: _mock.id(index),

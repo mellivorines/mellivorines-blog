@@ -1,7 +1,7 @@
 import _mock from '../_mock';
 import { randomInArray } from '../utils';
 
-// ----------------------------------------------------------------------
+
 
 export const _bookings = [...Array(5)].map((_, index) => ({
   id: _mock.id(index),
