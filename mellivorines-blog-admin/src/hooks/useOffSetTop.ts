@@ -1,7 +1,6 @@
 import { useScroll } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
-// ----------------------------------------------------------------------
 
 type ReturnType = boolean;
 

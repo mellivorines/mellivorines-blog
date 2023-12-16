@@ -1,34 +1,25 @@
-// i18n
-import './locales/i18n';
+// 国际化
+import './i18n/i18n';
 
-// scroll bar
+// 滚动条
 import 'simplebar/src/simplebar.css';
 
-// lazy image
+// 延时图片
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
-// ----------------------------------------------------------------------
 
 import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-// routes
 import Router from './routes';
-// theme
 import ThemeProvider from './theme';
-// locales
-import ThemeLocalization from './locales';
-// components
+import ThemeLocalization from './i18n';
 import SnackbarProvider from './components/snackbar';
 import ScrollToTop from './components/scroll-to-top';
 import { MotionLazyContainer } from './components/animate';
 import { ThemeSettings, SettingsProvider } from './components/settings';
 
-// Check our docs
-// https://docs.minimals.cc/authentication/ts-version
-
 import { AuthProvider } from './auth/JwtContext';
 
-// ----------------------------------------------------------------------
 
 export default function App() {
     return (

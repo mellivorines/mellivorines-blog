@@ -1,6 +1,5 @@
 import { useLocation, matchPath } from 'react-router-dom';
 
-// ----------------------------------------------------------------------
 
 type ReturnType = {
   active: boolean;

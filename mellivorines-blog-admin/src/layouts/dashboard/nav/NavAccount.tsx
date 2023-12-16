@@ -1,12 +1,8 @@
-// @mui
 import { styled, alpha } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
-// auth
 import { useAuthContext } from '../../../auth/useAuthContext';
-// components
 import { CustomAvatar } from '../../../components/custom-avatar';
 
-// ----------------------------------------------------------------------
 
 const StyledRoot = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -16,7 +12,6 @@ const StyledRoot = styled('div')(({ theme }) => ({
   backgroundColor: alpha(theme.palette.grey[500], 0.12),
 }));
 
-// ----------------------------------------------------------------------
 
 export default function NavAccount() {
   const { user } = useAuthContext();

@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
-// utils
 import localStorageAvailable from '../utils/localStorageAvailable';
 
-// ----------------------------------------------------------------------
 
 export default function useLocalStorage<ValueType>(key: string, defaultValue: ValueType) {
   const storageAvailable = localStorageAvailable();

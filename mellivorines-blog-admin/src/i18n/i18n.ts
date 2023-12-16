@@ -1,18 +1,14 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
-// utils
 import localStorageAvailable from '../utils/localStorageAvailable';
-//
 import { defaultLang } from './config-lang';
-//
 import enLocales from './langs/en';
 import frLocales from './langs/fr';
 import vnLocales from './langs/vn';
 import cnLocales from './langs/cn';
 import arLocales from './langs/ar';
 
-// ----------------------------------------------------------------------
 
 let lng = defaultLang.value;
 

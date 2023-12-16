@@ -2,8 +2,8 @@ import { forwardRef } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 // @mui
 import { Tooltip, Link, ListItemText } from '@mui/material';
-// locales
-import { useLocales } from '../../../locales';
+// i18n
+import { useLocales } from '../../../i18n';
 // auth
 import RoleBasedGuard from '../../../auth/RoleBasedGuard';
 //

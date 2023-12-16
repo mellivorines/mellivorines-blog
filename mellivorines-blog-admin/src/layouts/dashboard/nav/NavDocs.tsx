@@ -2,8 +2,8 @@
 import { Stack, Button, Typography, Box } from '@mui/material';
 // auth
 import { useAuthContext } from '../../../auth/useAuthContext';
-// locales
-import { useLocales } from '../../../locales';
+// i18n
+import { useLocales } from '../../../i18n';
 
 // ----------------------------------------------------------------------
 
