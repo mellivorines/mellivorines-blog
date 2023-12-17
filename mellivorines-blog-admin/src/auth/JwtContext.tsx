@@ -7,11 +7,9 @@ import {isValidToken, setSession} from './utils';
 import {ActionMapType, AuthStateType, AuthUserType, JWTContextType} from './types';
 
 
-
 // NOTE:
 // We only build demo at basic level.
 // Customer will need to do some extra handling yourself if you want to extend the logic and other features...
-
 
 
 enum Types {
@@ -36,7 +34,6 @@ type Payload = {
 };
 
 type ActionsType = ActionMapType<Payload>[keyof ActionMapType<Payload>];
-
 
 
 const initialState: AuthStateType = {
@@ -78,9 +75,7 @@ const reducer = (state: AuthStateType, action: ActionsType) => {
 };
 
 
-
 export const AuthContext = createContext<JWTContextType | null>(null);
-
 
 
 type AuthProviderProps = {
@@ -98,8 +93,8 @@ export function AuthProvider({children}: AuthProviderProps) {
 
             if (accessToken && isValidToken(accessToken)) {
                 setSession(accessToken);
-
-                const response = await axios.get('/admin/account/my-account');
+                console.log('accessToken', accessToken);
+                const response = await axios.get('/api/admin/account/my-account');
 
                 const {user} = response.data;
 
@@ -140,7 +135,7 @@ export function AuthProvider({children}: AuthProviderProps) {
         const formData = new FormData();
         formData.append('username', username);
         formData.append('password', password);
-        const response = await axios.post('/api/auth/login', formData, {
+        const response = await axios.post('/admin/auth/login', formData, {
             headers: {
                 'Content-Type': 'multipart/form-date',
             },
@@ -179,12 +174,18 @@ export function AuthProvider({children}: AuthProviderProps) {
     );
 
     // LOGOUT
-    const logout = useCallback(() => {
-        setSession(null);
-        dispatch({
-            type: Types.LOGOUT,
-        });
-    }, []);
+    const logout = useCallback(
+        async () => {
+            const response = await axios.get('/admin/auth/logout');
+            const {data} = response.data;
+            console.log('logout', data);
+            if (data) {
+                setSession(null);
+                dispatch({
+                    type: Types.LOGOUT,
+                });
+            }
+        }, []);
 
     const memoizedValue = useMemo(
         () => ({

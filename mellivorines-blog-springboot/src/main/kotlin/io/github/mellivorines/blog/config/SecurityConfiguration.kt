@@ -51,7 +51,7 @@ class SecurityConfiguration(
         return http
             .authorizeHttpRequests { conf ->
                 conf
-                    .requestMatchers("/local-plus/**", "/api/**", "/error").permitAll()
+                    .requestMatchers("/local-plus/**", "/api/**", "/admin/auth/login","/error").permitAll()
                     .requestMatchers("/swagger-ui/**", "/webjars/**", "/v3/api-docs/**").permitAll() // 放行开发文档资源目录
                     .requestMatchers("/doc.html").permitAll() // 放行开发文档资源目录
                     .requestMatchers("/static/**", "/resources/**").permitAll() // 其余的都需要权限校验
@@ -59,7 +59,7 @@ class SecurityConfiguration(
             }
             .formLogin { conf: FormLoginConfigurer<HttpSecurity> ->
                 conf
-                    .loginProcessingUrl("/api/auth/login")
+                    .loginProcessingUrl("/admin/auth/login")
                     .failureHandler { request: HttpServletRequest, response: HttpServletResponse, exceptionOrAuthentication: AuthenticationException ->
                         handleProcess(
                             request,
@@ -78,8 +78,9 @@ class SecurityConfiguration(
             }
             .logout { conf: LogoutConfigurer<HttpSecurity> ->
                 conf
-                    .logoutUrl("/api/auth/logout")
-                    .logoutSuccessHandler { request: HttpServletRequest, response: HttpServletResponse, authentication: Authentication ->
+                    .logoutUrl("/admin/auth/logout")
+                    .logoutSuccessHandler {
+                        request: HttpServletRequest, response: HttpServletResponse, authentication: Authentication ->
                         onLogoutSuccess(
                             request,
                             response,
