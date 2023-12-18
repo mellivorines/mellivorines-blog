@@ -29,12 +29,12 @@ const navConfig = [
     items: [
       {
         title: '权限管理',
-        path: PATH_DASHBOARD.user.root,
+        path: PATH_DASHBOARD.permissions.root,
         icon: icons.user,
         children: [
-          { title: '菜单管理', path: PATH_DASHBOARD.user.four },
-          { title: '接口管理', path: PATH_DASHBOARD.user.five },
-          { title: '角色管理', path: PATH_DASHBOARD.user.six },
+          { title: '菜单管理', path: PATH_DASHBOARD.permissions.eight },
+          { title: '接口管理', path: PATH_DASHBOARD.permissions.nine },
+          { title: '角色管理', path: PATH_DASHBOARD.permissions.seven },
         ],
       },
       {
@@ -54,30 +54,30 @@ const navConfig = [
     items: [
       {
         title: '文章管理',
-        path: PATH_DASHBOARD.user.root,
+        path: PATH_DASHBOARD.article.root,
         icon: icons.user,
         children: [
-          { title: '发布文章', path: PATH_DASHBOARD.user.four },
-          { title: '文章列表', path: PATH_DASHBOARD.user.five },
-          { title: '分类管理', path: PATH_DASHBOARD.user.six },
-          { title: '标签管理', path: PATH_DASHBOARD.user.six },
+          { title: '发布文章', path: PATH_DASHBOARD.article.four },
+          { title: '文章列表', path: PATH_DASHBOARD.article.five },
+          { title: '分类管理', path: PATH_DASHBOARD.article.six },
+          { title: '标签管理', path: PATH_DASHBOARD.article.six },
         ],
       },
       {
         title: '说说管理',
-        path: PATH_DASHBOARD.user.root,
+        path: PATH_DASHBOARD.talk.root,
         icon: icons.user,
         children: [
-          { title: '说说列表', path: PATH_DASHBOARD.user.four },
-          { title: '发布说说', path: PATH_DASHBOARD.user.five },
+          { title: '说说列表', path: PATH_DASHBOARD.talk.four },
+          { title: '发布说说', path: PATH_DASHBOARD.talk.five },
         ],
       },
       {
         title: '消息管理',
-        path: PATH_DASHBOARD.user.root,
+        path: PATH_DASHBOARD.message.root,
         icon: icons.user,
         children: [
-          { title: '评论管理', path: PATH_DASHBOARD.user.four },
+          { title: '评论管理', path: PATH_DASHBOARD.message.one },
         ],
       },
     ],
@@ -88,19 +88,19 @@ const navConfig = [
     items: [
       {
         title: '相册管理',
-        path: PATH_DASHBOARD.user.root,
+        path: PATH_DASHBOARD.photo.root,
         icon: icons.user,
         children: [
-          { title: '相册列表', path: PATH_DASHBOARD.user.four },
+          { title: '相册列表', path: PATH_DASHBOARD.photo.four },
         ],
       },
       {
         title: '日志管理',
-        path: PATH_DASHBOARD.user.root,
+        path: PATH_DASHBOARD.log.root,
         icon: icons.user,
         children: [
-          { title: '异常日志', path: PATH_DASHBOARD.user.four },
-          { title: '操作日志', path: PATH_DASHBOARD.user.four },
+          { title: '异常日志', path: PATH_DASHBOARD.log.four },
+          { title: '操作日志', path: PATH_DASHBOARD.log.four },
         ],
       },
     ],
@@ -111,13 +111,13 @@ const navConfig = [
     items: [
       {
         title: '系统管理',
-        path: PATH_DASHBOARD.user.root,
+        path: PATH_DASHBOARD.system.root,
         icon: icons.user,
         children: [
-          { title: '网站管理', path: PATH_DASHBOARD.user.four },
-          { title: '定时任务', path: PATH_DASHBOARD.user.four },
-          { title: '友链管理', path: PATH_DASHBOARD.user.four },
-          { title: '关于我', path: PATH_DASHBOARD.user.four },
+          { title: '网站管理', path: PATH_DASHBOARD.system.four },
+          { title: '定时任务', path: PATH_DASHBOARD.system.four },
+          { title: '友链管理', path: PATH_DASHBOARD.system.four },
+          { title: '关于我', path: PATH_DASHBOARD.system.four },
         ],
       },
     ],
