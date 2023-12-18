@@ -57,10 +57,10 @@ const navConfig = [
         path: PATH_DASHBOARD.article.root,
         icon: icons.user,
         children: [
-          { title: '发布文章', path: PATH_DASHBOARD.article.four },
-          { title: '文章列表', path: PATH_DASHBOARD.article.five },
-          { title: '分类管理', path: PATH_DASHBOARD.article.six },
-          { title: '标签管理', path: PATH_DASHBOARD.article.six },
+          { title: '发布文章', path: PATH_DASHBOARD.article.one },
+          { title: '文章列表', path: PATH_DASHBOARD.article.two },
+          { title: '分类管理', path: PATH_DASHBOARD.article.three },
+          { title: '标签管理', path: PATH_DASHBOARD.article.four },
         ],
       },
       {
@@ -68,8 +68,8 @@ const navConfig = [
         path: PATH_DASHBOARD.talk.root,
         icon: icons.user,
         children: [
-          { title: '说说列表', path: PATH_DASHBOARD.talk.four },
-          { title: '发布说说', path: PATH_DASHBOARD.talk.five },
+          { title: '说说列表', path: PATH_DASHBOARD.talk.one },
+          { title: '发布说说', path: PATH_DASHBOARD.talk.two },
         ],
       },
       {
@@ -91,7 +91,7 @@ const navConfig = [
         path: PATH_DASHBOARD.photo.root,
         icon: icons.user,
         children: [
-          { title: '相册列表', path: PATH_DASHBOARD.photo.four },
+          { title: '相册列表', path: PATH_DASHBOARD.photo.one },
         ],
       },
       {
@@ -99,8 +99,8 @@ const navConfig = [
         path: PATH_DASHBOARD.log.root,
         icon: icons.user,
         children: [
-          { title: '异常日志', path: PATH_DASHBOARD.log.four },
-          { title: '操作日志', path: PATH_DASHBOARD.log.four },
+          { title: '异常日志', path: PATH_DASHBOARD.log.one },
+          { title: '操作日志', path: PATH_DASHBOARD.log.two },
         ],
       },
     ],
@@ -114,9 +114,9 @@ const navConfig = [
         path: PATH_DASHBOARD.system.root,
         icon: icons.user,
         children: [
-          { title: '网站管理', path: PATH_DASHBOARD.system.four },
-          { title: '定时任务', path: PATH_DASHBOARD.system.four },
-          { title: '友链管理', path: PATH_DASHBOARD.system.four },
+          { title: '网站管理', path: PATH_DASHBOARD.system.one },
+          { title: '定时任务', path: PATH_DASHBOARD.system.two },
+          { title: '友链管理', path: PATH_DASHBOARD.system.three },
           { title: '关于我', path: PATH_DASHBOARD.system.four },
         ],
       },
