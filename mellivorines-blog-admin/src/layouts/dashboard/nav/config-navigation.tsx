@@ -6,7 +6,7 @@ const icon = (name: string) => (
   <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
 );
 
-const ICONS = {
+const icons = {
   user: icon('ic_user'),
   ecommerce: icon('ic_ecommerce'),
   analytics: icon('ic_analytics'),
@@ -18,8 +18,8 @@ const navConfig = [
   {
     subheader: '应用',
     items: [
-      { title: '看板', path: PATH_DASHBOARD.one, icon: ICONS.dashboard },
-      { title: '日志', path: PATH_DASHBOARD.three, icon: ICONS.analytics },
+      { title: '看板', path: PATH_DASHBOARD.one, icon: icons.dashboard },
+      { title: '日志', path: PATH_DASHBOARD.three, icon: icons.analytics },
     ],
   },
 
@@ -30,7 +30,7 @@ const navConfig = [
       {
         title: '权限管理',
         path: PATH_DASHBOARD.user.root,
-        icon: ICONS.user,
+        icon: icons.user,
         children: [
           { title: '菜单管理', path: PATH_DASHBOARD.user.four },
           { title: '接口管理', path: PATH_DASHBOARD.user.five },
@@ -40,7 +40,7 @@ const navConfig = [
       {
         title: '用户管理',
         path: PATH_DASHBOARD.user.root,
-        icon: ICONS.user,
+        icon: icons.user,
         children: [
           { title: '用户列表', path: PATH_DASHBOARD.user.four },
           { title: '在线用户', path: PATH_DASHBOARD.user.five },
@@ -55,7 +55,7 @@ const navConfig = [
       {
         title: '文章管理',
         path: PATH_DASHBOARD.user.root,
-        icon: ICONS.user,
+        icon: icons.user,
         children: [
           { title: '发布文章', path: PATH_DASHBOARD.user.four },
           { title: '文章列表', path: PATH_DASHBOARD.user.five },
@@ -66,7 +66,7 @@ const navConfig = [
       {
         title: '说说管理',
         path: PATH_DASHBOARD.user.root,
-        icon: ICONS.user,
+        icon: icons.user,
         children: [
           { title: '说说列表', path: PATH_DASHBOARD.user.four },
           { title: '发布说说', path: PATH_DASHBOARD.user.five },
@@ -75,7 +75,7 @@ const navConfig = [
       {
         title: '消息管理',
         path: PATH_DASHBOARD.user.root,
-        icon: ICONS.user,
+        icon: icons.user,
         children: [
           { title: '评论管理', path: PATH_DASHBOARD.user.four },
         ],
@@ -89,7 +89,7 @@ const navConfig = [
       {
         title: '相册管理',
         path: PATH_DASHBOARD.user.root,
-        icon: ICONS.user,
+        icon: icons.user,
         children: [
           { title: '相册列表', path: PATH_DASHBOARD.user.four },
         ],
@@ -97,7 +97,7 @@ const navConfig = [
       {
         title: '日志管理',
         path: PATH_DASHBOARD.user.root,
-        icon: ICONS.user,
+        icon: icons.user,
         children: [
           { title: '异常日志', path: PATH_DASHBOARD.user.four },
           { title: '操作日志', path: PATH_DASHBOARD.user.four },
@@ -112,7 +112,7 @@ const navConfig = [
       {
         title: '系统管理',
         path: PATH_DASHBOARD.user.root,
-        icon: ICONS.user,
+        icon: icons.user,
         children: [
           { title: '网站管理', path: PATH_DASHBOARD.user.four },
           { title: '定时任务', path: PATH_DASHBOARD.user.four },
