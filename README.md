@@ -7,7 +7,7 @@
   同时也欢迎大家来共建此项目，包括但不限于：bug 修复、代码优化、功能开发等等
 - 本项目后端是kotlin配合springboot3对jimmer的一个实验项目，基于[linhaojun857](https://github.com/linhaojun857)的[aurora](https://github.com/linhaojun857/aurora)博客重构
 
-## 效果图
+## 前台效果图
 
 ### 白色主题：
 ![图片1](doc/images/iShot_2023-09-09_17.31.10.png)
@@ -16,6 +16,10 @@
 ### 黑色主题：
 ![图片3](doc/images/iShot_2023-09-09_17.31.24.png)
 ![图片4](doc/images/iShot_2023-09-09_17.31.33.png)
+
+## 前台效果图
+![图片](doc/images/iShot_2023-12-23_17.28.34.gif)
+
 ## 相关技术
 
 ### 前端：
