@@ -22,6 +22,7 @@ import ContrastOptions from './ContrastOptions';
 import DirectionOptions from './DirectionOptions';
 import FullScreenOptions from './FullScreenOptions';
 import ColorPresetsOptions from './ColorPresetsOptions';
+import {useLocales} from "../../../i18n";
 
 // ----------------------------------------------------------------------
 
@@ -37,7 +38,7 @@ export default function SettingsDrawer() {
     themeColorPresets,
     onResetSetting,
   } = useSettingsContext();
-
+  const { translate } = useLocales();
   const theme = useTheme();
 
   const [open, setOpen] = useState(false);
@@ -85,10 +86,10 @@ export default function SettingsDrawer() {
           sx={{ py: 2, pr: 1, pl: SPACING }}
         >
           <Typography variant="subtitle1" sx={{ flexGrow: 1 }}>
-            Settings
+            {`${translate('settings.setting')}`}
           </Typography>
 
-          <Tooltip title="Reset">
+          <Tooltip title={`${translate('settings.reset')}`}>
             <Box sx={{ position: 'relative' }}>
               {notDefault && <BadgeDot />}
               <IconButton onClick={onResetSetting}>
@@ -105,27 +106,28 @@ export default function SettingsDrawer() {
         <Divider sx={{ borderStyle: 'dashed' }} />
 
         <Scrollbar sx={{ p: SPACING, pb: 0 }}>
-          <Block title="Mode">
+          <Block title={`${translate('settings.mode')}`}>
             <ModeOptions />
           </Block>
 
-          <Block title="Contrast">
+          <Block title={`${translate('settings.contrast')}`}>
             <ContrastOptions />
           </Block>
 
-          <Block title="Direction">
+          <Block title={`${translate('settings.direction')}`}>
             <DirectionOptions />
           </Block>
 
-          <Block title="Layout">
+          <Block title={`${translate('settings.layout')}`}>
             <LayoutOptions />
           </Block>
 
-          <Block title="Stretch" tooltip="Only available at large resolutions > 1600px (xl)">
+          <Block title={`${translate('settings.stretch')}`} tooltip={`${translate('settings.stretchTip')}`}>
+          {/*<Block title={`${translate('settings.stretch')}`} tooltip="Only available at large resolutions > 1600px (xl)">*/}
             <StretchOptions />
           </Block>
 
-          <Block title="Presets">
+          <Block title={`${translate('settings.presets')}`}>
             <ColorPresetsOptions />
           </Block>
         </Scrollbar>

@@ -2,12 +2,13 @@ import { useState } from 'react';
 //
 import SvgColor from '../../svg-color';
 import { StyledCard } from '../styles';
+import {useLocales} from "../../../i18n";
 
 // ----------------------------------------------------------------------
 
 export default function FullScreenOptions() {
   const [fullscreen, setFullscreen] = useState(false);
-
+    const { translate } = useLocales();
   const onToggleFullScreen = () => {
     if (!document.fullscreenElement) {
       document.documentElement.requestFullscreen();
@@ -32,7 +33,7 @@ export default function FullScreenOptions() {
         },
       }}
     >
-      {fullscreen ? 'Exit Fullscreen' : 'Fullscreen'}
+      {fullscreen ? `${translate('settings.ExitFullscreen')}` : `${translate('settings.Fullscreen')}`}
 
       <SvgColor
         src={`/assets/icons/setting/${fullscreen ? 'ic_exit_full_screen' : 'ic_full_screen'}.svg`}

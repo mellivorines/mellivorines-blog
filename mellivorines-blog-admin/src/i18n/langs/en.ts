@@ -6,6 +6,12 @@
 
 
 const en = {
+  accountSetting: {
+    home: 'home',
+    settings: 'settings',
+    logout: 'logout',
+    profile: 'profile',
+  },
   demo: {
     title: `English`,
     introduction: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
@@ -16,6 +22,19 @@ const en = {
     articleManagement:'article management',
     resourcesManagement:'resources management',
     systemManagement:'system management',
+  },
+  settings:{
+    setting:'settings',
+    reset:'Reset',
+    mode:'Mode',
+    contrast:'Contrast',
+    direction:'Direction',
+    layout:'Layout',
+    stretch:'Stretch',
+    stretchTip:'Only available at large resolutions > 1600px (xl)',
+    presets:'Presets',
+    Fullscreen:'Fullscreen',
+    ExitFullscreen:'Exit Fullscreen',
   },
   menu: {
     dashboard: 'dashboard',

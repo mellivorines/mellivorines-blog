@@ -8,19 +8,20 @@ import { CustomAvatar } from '../../../components/custom-avatar';
 import { useSnackbar } from '../../../components/snackbar';
 import MenuPopover from '../../../components/menu-popover';
 import { IconButtonAnimate } from '../../../components/animate';
+import {useLocales} from "../../../i18n";
 
 
 const OPTIONS = [
   {
-    label: 'Home',
+    label: 'accountSetting.home',
     linkTo: '/',
   },
   {
-    label: 'Profile',
+    label: 'accountSetting.profile',
     linkTo: '/',
   },
   {
-    label: 'Settings',
+    label: 'accountSetting.settings',
     linkTo: '/',
   },
 ];
@@ -28,7 +29,7 @@ const OPTIONS = [
 
 export default function AccountPopover() {
   const navigate = useNavigate();
-
+  const { translate } = useLocales();
   const { user, logout } = useAuthContext();
 
   const { enqueueSnackbar } = useSnackbar();
@@ -97,7 +98,7 @@ export default function AccountPopover() {
         <Stack sx={{ p: 1 }}>
           {OPTIONS.map((option) => (
             <MenuItem key={option.label} onClick={() => handleClickItem(option.linkTo)}>
-              {option.label}
+              {`${translate(option.label)}`}
             </MenuItem>
           ))}
         </Stack>
@@ -105,7 +106,7 @@ export default function AccountPopover() {
         <Divider sx={{ borderStyle: 'dashed' }} />
 
         <MenuItem onClick={handleLogout} sx={{ m: 1 }}>
-          Logout
+          {`${translate('accountSetting.logout')}`}
         </MenuItem>
       </MenuPopover>
     </>

@@ -3,6 +3,12 @@
 
 
 const cn = {
+    accountSetting: {
+        home: '首页',
+        settings: '设置',
+        logout: '登出',
+        profile: '个人资料',
+    },
     demo: {
         title: `Chinese`,
         introduction: `Lorem Ipsum 只是印刷和排版行业的虚拟文本。 自 1500 年代以来，Lorem Ipsum 一直是行业的标准虚拟文本，当时一位不知名的印刷商采用了一种类型的厨房并将其加扰以制作类型样本书。 它不仅经历了五个世纪，而且经历了电子排版的飞跃，基本保持不变。 它在 1960 年代随着包含 Lorem Ipsum 段落的 Letraset 表的发布而流行起来，最近还随着 Aldus PageMaker 等桌面出版软件（包括 Lorem Ipsum 的版本）而普及.`,
@@ -52,7 +58,7 @@ const cn = {
 
         systemManagement: '系统管理',
         websiteSetting: '网站管理',
-        scheduledTask:'定时任务',
+        scheduledTask: '定时任务',
         friendLink: '友链管理',
         aboutUs: '关于我们',
     },
@@ -60,6 +66,19 @@ const cn = {
         hi: `你好`,
         description: `需要帮忙？\n 请查看我们的文档.`,
         documentation: `文件`,
+    },
+    settings:{
+        setting:'设置',
+        reset:'重置',
+        mode:'模式',
+        contrast:'反差',
+        direction:'方向',
+        layout:'布局',
+        stretch:'伸展',
+        stretchTip:'仅适用于 1600 像素 （xl） >大分辨率',
+        presets:'预设',
+        Fullscreen:'全屏',
+        ExitFullscreen:'退出全屏',
     },
     app: `应用程序`,
     user: `用户`,
