@@ -7,33 +7,54 @@ const cn = {
         title: `Chinese`,
         introduction: `Lorem Ipsum 只是印刷和排版行业的虚拟文本。 自 1500 年代以来，Lorem Ipsum 一直是行业的标准虚拟文本，当时一位不知名的印刷商采用了一种类型的厨房并将其加扰以制作类型样本书。 它不仅经历了五个世纪，而且经历了电子排版的飞跃，基本保持不变。 它在 1960 年代随着包含 Lorem Ipsum 段落的 Letraset 表的发布而流行起来，最近还随着 Aldus PageMaker 等桌面出版软件（包括 Lorem Ipsum 的版本）而普及.`,
     },
-    menu: {
-        appName: '应用',
-        app: {
-            dashboard: '看板',
-            log: '日志',
-        },
+    nav: {
+        app: '应用程序',
         userManagement: '用户管理',
-        permissionsManagement: '用户管理',
-        permissions: {
-            menuManagement: '菜单管理',
-            apiManagement: '接口管理',
-            roleManagement: '角色管理',
-        },
-        user: {
-            userList: '用户列表',
-            onlineUser: '在线用户',
-            userProfile: '用户资料',
-            userEdit: '编辑用户',
-            userCreate: '创建用户',
-            userDelete: '删除用户',
-            userPermissions: '用户权限',
-            userRoles: '用户角色',
-            userPermissionsEdit: '编辑用户权限',
-            userRolesEdit: '编辑用户角色',
-            userPermissionsCreate: '创建用户权限',
-            userRolesCreate: '创建用户角色',
-        },
+        articleManagement: '文章管理',
+        resourcesManagement: '资源管理',
+        systemManagement: '系统管理',
+    },
+    menu: {
+        dashboard: '看板',
+        log: '日志',
+
+        permissionsManagement: '权限管理',
+        menuManagement: '菜单管理',
+        apiManagement: '接口管理',
+        roleManagement: '角色管理',
+
+        userManagement: '用户管理',
+        userList: '用户列表',
+        onlineUser: '在线用户',
+
+
+        articleManagement: '文章管理',
+        publishArticle: '文章发布',
+        articleList: '文章列表',
+        tagsManagement: '标签管理',
+        categoriesManagement: '分类管理',
+
+
+        talkManagement: '说说管理',
+        talkList: '说说列表',
+        publishTalk: '说说发布',
+
+        messageManagement: '消息管理',
+        messageList: '消息列表',
+        commentManagement: '评论管理',
+
+        albumManagement: '相册管理',
+        albumList: '相册列表',
+
+        logManagement: '日志管理',
+        errorLog: '错误日志',
+        operationLog: '操作日志',
+
+        systemManagement: '系统管理',
+        websiteSetting: '网站管理',
+        scheduledTask:'定时任务',
+        friendLink: '友链管理',
+        aboutUs: '关于我们',
     },
     docs: {
         hi: `你好`,

@@ -10,6 +10,55 @@ const en = {
     title: `English`,
     introduction: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.`,
   },
+  nav:{
+    app:'app',
+    userManagement:'user management',
+    articleManagement:'article management',
+    resourcesManagement:'resources management',
+    systemManagement:'system management',
+  },
+  menu: {
+    dashboard: 'dashboard',
+    log: 'log',
+
+    permissionsManagement: 'permissions Management',
+    menuManagement: 'menu Management',
+    apiManagement: 'api Management',
+    roleManagement: 'role Management',
+
+    userManagement: 'user Management',
+    userList: 'user List',
+    onlineUser: 'online User',
+
+
+    articleManagement: 'article Management',
+    publishArticle: 'publish Article',
+    articleList: 'article List',
+    tagsManagement: 'tags Management',
+    categoriesManagement: 'categories Management',
+
+
+    talkManagement: 'talk Management',
+    talkList: 'talk List',
+    publishTalk: 'publish Talk',
+
+    messageManagement: 'message Management',
+    messageList: 'message List',
+    commentManagement: 'comment Management',
+
+    albumManagement: 'album Management',
+    albumList: 'album List',
+
+    logManagement: 'log Management',
+    errorLog: 'error Log',
+    operationLog: 'operation Log',
+
+    systemManagement: 'system Management',
+    websiteSetting: 'website Setting',
+    scheduledTask:'scheduled Task',
+    friendLink: 'friend Link',
+    aboutUs: 'about Us',
+  },
   docs: {
     hi: `Hi`,
     description: `Need help? \n Please check our docs.`,
