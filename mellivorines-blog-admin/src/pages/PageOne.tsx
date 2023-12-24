@@ -3,11 +3,14 @@ import { Helmet } from 'react-helmet-async';
 import { Container, Typography } from '@mui/material';
 // components
 import { useSettingsContext } from '../components/settings';
+import useBearStore from "../Stores/TestStore.ts";
 
 
 
 export default function PageOne() {
   const { themeStretch } = useSettingsContext();
+  const bears = useBearStore((state) => state.bears)
+  const increasePopulation = useBearStore((state) => state.increasePopulation)
 
   return (
     <>
@@ -19,6 +22,8 @@ export default function PageOne() {
         <Typography variant="h3" component="h1" paragraph>
           Page One
         </Typography>
+        <p>{bears}</p>
+        <button onClick={increasePopulation}>增加</button>
 
         <Typography gutterBottom>
           Curabitur turpis. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc,

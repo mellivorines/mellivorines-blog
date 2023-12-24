@@ -6,6 +6,20 @@
 
 
 const en = {
+  page: {
+    login: {
+      title: 'Login',
+      hi: "Hi, Welcome back",
+      description:"Log in to the blog",
+      newUser: 'New User?',
+      createAccount: 'Create Account',
+      emailAddress: "email address",
+      password: 'Password',
+      forgotPassword: 'Forgot Password?',
+      login: 'Login',
+      or: 'or',
+    },
+  },
   accountSetting: {
     home: 'home',
     settings: 'settings',

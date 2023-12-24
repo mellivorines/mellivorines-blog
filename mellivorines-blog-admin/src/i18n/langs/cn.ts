@@ -3,6 +3,20 @@
 
 
 const cn = {
+    page:{
+        login:{
+            title: '登录',
+            hi: "你好,欢迎回来",
+            description:"登陆博客",
+            newUser: '新用户?',
+            createAccount: '创建账户',
+            emailAddress: '电子邮件',
+            password:'密码',
+            forgotPassword: '忘记密码?',
+            login: '登录',
+            or: '或者',
+        }
+    },
     accountSetting: {
         home: '首页',
         settings: '设置',

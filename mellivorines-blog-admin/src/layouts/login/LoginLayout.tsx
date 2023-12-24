@@ -2,6 +2,7 @@ import { Typography, Stack } from '@mui/material';
 import Logo from '../../components/logo';
 import Image from '../../components/image';
 import { StyledRoot, StyledSectionBg, StyledSection, StyledContent } from './styles';
+import {useLocales} from "../../i18n";
 
 
 type Props = {
@@ -11,6 +12,7 @@ type Props = {
 };
 
 export default function LoginLayout({ children, illustration, title }: Props) {
+    const {translate} = useLocales();
   return (
     <StyledRoot>
       <Logo
@@ -24,7 +26,7 @@ export default function LoginLayout({ children, illustration, title }: Props) {
 
       <StyledSection>
         <Typography variant="h3" sx={{ mb: 10, maxWidth: 480, textAlign: 'center' }}>
-          {title || 'Hi, Welcome back'}
+          {title || `${translate('page.login.hi')}`}
         </Typography>
 
         <Image

@@ -1,72 +1,87 @@
-import { Divider, IconButton, Stack } from '@mui/material';
-import { useAuthContext } from '../../auth/useAuthContext';
+import {Divider, IconButton, Stack} from '@mui/material';
+import {useAuthContext} from '../../auth/useAuthContext';
 import Iconify from '../../components/iconify';
+import {useLocales} from "../../i18n";
 
 
 export default function AuthWithSocial() {
-  const { loginWithGoogle, loginWithGithub, loginWithTwitter } = useAuthContext();
+    const {loginWithQQ, loginWithWeChat, loginWithGithub, loginWithGitee} = useAuthContext();
+    const {translate} = useLocales();
+    const handleQQLogin = async () => {
+        try {
+            if (loginWithQQ) {
+                loginWithQQ();
+            }
+            console.log('GOOGLE LOGIN');
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
-  const handleGoogleLogin = async () => {
-    try {
-      if (loginWithGoogle) {
-        loginWithGoogle();
-      }
-      console.log('GOOGLE LOGIN');
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    const handleWeChatLogin = async () => {
+        try {
+            if (loginWithWeChat) {
+                loginWithWeChat();
+            }
+            console.log('GOOGLE LOGIN');
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
-  const handleGithubLogin = async () => {
-    try {
-      if (loginWithGithub) {
-        loginWithGithub();
-      }
-      console.log('GITHUB LOGIN');
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    const handleGithubLogin = async () => {
+        try {
+            if (loginWithGithub) {
+                loginWithGithub();
+            }
+            console.log('GITHUB LOGIN');
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
-  const handleTwitterLogin = async () => {
-    try {
-      if (loginWithTwitter) {
-        loginWithTwitter();
-      }
-      console.log('TWITTER LOGIN');
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    const handleGiteeLogin = async () => {
+        try {
+            if (loginWithGitee) {
+                loginWithGitee();
+            }
+            console.log('GITEE LOGIN');
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
-  return (
-    <div>
-      <Divider
-        sx={{
-          my: 2.5,
-          typography: 'overline',
-          color: 'text.disabled',
-          '&::before, ::after': {
-            borderTopStyle: 'dashed',
-          },
-        }}
-      >
-        OR
-      </Divider>
+    return (
+        <div>
+            <Divider
+                sx={{
+                    my: 2.5,
+                    typography: 'overline',
+                    color: 'text.disabled',
+                    '&::before, ::after': {
+                        borderTopStyle: 'dashed',
+                    },
+                }}
+            >
+                {`${translate('page.login.or')}`}
+            </Divider>
 
-      <Stack direction="row" justifyContent="center" spacing={2}>
-        <IconButton onClick={handleGoogleLogin}>
-          <Iconify icon="eva:google-fill" color="#DF3E30" />
-        </IconButton>
+            <Stack direction="row" justifyContent="center" spacing={2}>
+                <IconButton onClick={handleQQLogin}>
+                    <Iconify icon="mingcute:qq-fill"/>
+                </IconButton>
+                <IconButton onClick={handleWeChatLogin}>
+                    <Iconify icon="carbon:logo-wechat" color="#2E8B57"/>
+                </IconButton>
 
-        <IconButton color="inherit" onClick={handleGithubLogin}>
-          <Iconify icon="eva:github-fill" />
-        </IconButton>
+                <IconButton color="inherit" onClick={handleGithubLogin}>
+                    <Iconify icon="bytesize:github"/>
+                </IconButton>
 
-        <IconButton onClick={handleTwitterLogin}>
-          <Iconify icon="eva:twitter-fill" color="#1C9CEA" />
-        </IconButton>
-      </Stack>
-    </div>
-  );
+                <IconButton onClick={handleGiteeLogin}>
+                    <Iconify icon="simple-icons:gitee" color="#DF3E30"/>
+                </IconButton>
+            </Stack>
+        </div>
+    );
 }
