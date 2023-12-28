@@ -12,7 +12,7 @@ import {
   PageFour,
   PageFive,
   LoginPage,
-  PageThree,
+  PageThree, BlogNewPostPage,
 } from './elements';
 
 
@@ -66,7 +66,7 @@ export default function Router() {
           path: 'article',
           children: [
             { element: <Navigate to="/dashboard/article/one" replace />, index: true },
-            { path: 'one', element: <PageFour /> },
+            { path: 'one', element: <BlogNewPostPage /> },
             { path: 'two', element: <PageFive /> },
             { path: 'three', element: <PageSix /> },
             { path: 'four', element: <PageFour /> },

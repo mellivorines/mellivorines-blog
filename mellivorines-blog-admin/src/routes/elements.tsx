@@ -11,6 +11,7 @@ const Loadable = (Component: ElementType) => (props: any) =>
 
 
 export const LoginPage = Loadable(lazy(() => import('../pages/LoginPage')));
+export const BlogNewPostPage = Loadable(lazy(() => import('../pages/blog/BlogNewPostPage')));
 
 export const PageOne = Loadable(lazy(() => import('../pages/PageOne')));
 export const PageTwo = Loadable(lazy(() => import('../pages/PageTwo')));

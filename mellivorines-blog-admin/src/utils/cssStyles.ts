@@ -1,7 +1,7 @@
 // @mui
 import { alpha } from '@mui/material/styles';
 
-
+// ----------------------------------------------------------------------
 
 type BgBlurProps = {
   blur?: number;

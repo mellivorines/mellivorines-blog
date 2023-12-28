@@ -1,6 +1,4 @@
-// form
 import { useFormContext, Controller } from 'react-hook-form';
-// @mui
 import {
   Box,
   Chip,
@@ -16,7 +14,6 @@ import {
   FormHelperText,
 } from '@mui/material';
 
-// ----------------------------------------------------------------------
 
 type RHFSelectProps = TextFieldProps & {
   name: string;

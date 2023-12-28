@@ -1,7 +1,5 @@
-// form
 import { FormProvider as Form, UseFormReturn } from 'react-hook-form';
 
-// ----------------------------------------------------------------------
 
 type Props = {
   children: React.ReactNode;
