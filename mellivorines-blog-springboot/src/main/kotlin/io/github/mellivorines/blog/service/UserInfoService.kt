@@ -1,6 +1,5 @@
 package io.github.mellivorines.blog.service
 
-import cn.xuyanwu.spring.file.storage.FileStorageService
 import io.github.mellivorines.blog.constant.CommonConstant.USER_CODE_KEY
 import io.github.mellivorines.blog.constant.FilePathEnum
 import io.github.mellivorines.blog.constant.LoginTypeEnum
@@ -14,6 +13,7 @@ import io.github.mellivorines.blog.repository.UserInfoRepository
 import io.github.mellivorines.blog.utils.UserUtil
 import org.babyfish.jimmer.kt.new
 import org.babyfish.jimmer.sql.kt.ast.expression.eq
+import org.dromara.x.file.storage.core.FileStorageService
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile

@@ -4,6 +4,16 @@ import { alpha } from '@mui/material/styles';
 import palette from './palette';
 
 
+declare module '@mui/material/styles' {
+  interface Theme {
+    customShadows: CustomShadowOptions;
+  }
+  interface ThemeOptions {
+    customShadows?: CustomShadowOptions;
+  }
+}
+
+
 
 interface CustomShadowOptions {
   z1: string;
@@ -26,14 +36,6 @@ interface CustomShadowOptions {
   dropdown: string;
 }
 
-declare module '@mui/material/styles' {
-  interface Theme {
-    customShadows: CustomShadowOptions;
-  }
-  interface ThemeOptions {
-    customShadows?: CustomShadowOptions;
-  }
-}
 
 
 

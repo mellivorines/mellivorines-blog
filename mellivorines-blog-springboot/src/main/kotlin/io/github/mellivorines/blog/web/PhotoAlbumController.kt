@@ -1,6 +1,5 @@
 package io.github.mellivorines.blog.web
 
-import cn.xuyanwu.spring.file.storage.FileStorageService
 import io.github.mellivorines.blog.constant.FilePathEnum
 import io.github.mellivorines.blog.model.ResultVO
 import io.github.mellivorines.blog.model.entity.PhotoAlbum
@@ -14,6 +13,7 @@ import io.swagger.v3.oas.annotations.tags.Tag
 import org.babyfish.jimmer.spring.repository.fetchPage
 import org.babyfish.jimmer.sql.kt.ast.expression.desc
 import org.babyfish.jimmer.sql.kt.ast.expression.ilike
+import org.dromara.x.file.storage.core.FileStorageService
 import org.springframework.data.domain.Page
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile

@@ -1,6 +1,5 @@
 package io.github.mellivorines.blog.web
 
-import cn.xuyanwu.spring.file.storage.FileStorageService
 import io.github.mellivorines.blog.constant.FilePathEnum
 import io.github.mellivorines.blog.model.ResultVO
 import io.github.mellivorines.blog.model.entity.dto.TalkAdminView
@@ -11,6 +10,7 @@ import io.github.mellivorines.blog.service.TalkService
 import io.github.mellivorines.salamanderblog.out.ConditionVO
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
+import org.dromara.x.file.storage.core.FileStorageService
 import org.springframework.data.domain.Page
 import org.springframework.web.bind.annotation.*
 import org.springframework.web.multipart.MultipartFile

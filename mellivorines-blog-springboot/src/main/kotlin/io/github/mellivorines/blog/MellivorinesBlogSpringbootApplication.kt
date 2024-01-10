@@ -1,6 +1,6 @@
 package io.github.mellivorines.blog
 
-import cn.xuyanwu.spring.file.storage.spring.EnableFileStorage
+import org.dromara.x.file.storage.spring.EnableFileStorage
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 

@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "3.1.3"
-    id("io.spring.dependency-management") version "1.1.3"
+    id("org.springframework.boot") version "3.2.1"
+    id("io.spring.dependency-management") version "1.1.4"
     kotlin("jvm") version "1.9.20"
     kotlin("plugin.spring") version "1.9.20"
     id("com.google.devtools.ksp") version "1.9.20-1.0.14"
@@ -42,8 +42,8 @@ dependencies {
     runtimeOnly("com.mysql:mysql-connector-j")
     implementation("com.auth0:java-jwt:4.3.0")
 
-    implementation("cn.xuyanwu:spring-file-storage:1.0.3")
-    implementation("io.minio:minio:8.5.5")
+    implementation("org.dromara.x-file-storage:x-file-storage-spring:2.0.0")
+    implementation("io.minio:minio:8.5.7")
 
     implementation("org.lionsoul:ip2region:2.7.0")
     implementation("org.yaml:snakeyaml:2.1")
