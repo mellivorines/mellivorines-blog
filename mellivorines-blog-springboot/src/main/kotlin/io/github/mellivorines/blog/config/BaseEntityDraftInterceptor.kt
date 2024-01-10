@@ -16,9 +16,9 @@ import java.time.LocalDateTime
  * @since 2023/9/2
  */
 @Component
-class BaseEntityDraftInterceptor : DraftInterceptor<BaseEntityDraft> {
-    override fun beforeSave(draft: BaseEntityDraft, isNew: Boolean) {
-        if (isNew) {
+class BaseEntityDraftInterceptor : DraftInterceptor<BaseEntity,BaseEntityDraft> {
+    override fun beforeSave(draft: BaseEntityDraft, original: BaseEntity?) {
+        if (original === null) {
             if (!isLoaded(draft, BaseEntity::createTime)) {
                 draft.createTime = LocalDateTime.now()
             }
