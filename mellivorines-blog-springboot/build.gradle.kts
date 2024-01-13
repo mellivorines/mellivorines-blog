@@ -42,7 +42,12 @@ dependencies {
     runtimeOnly("com.mysql:mysql-connector-j")
     implementation("com.auth0:java-jwt:4.3.0")
 
-    implementation("org.dromara.x-file-storage:x-file-storage-spring:2.0.0")
+    implementation("org.dromara.x-file-storage:x-file-storage-spring:2.0.0") {
+        exclude("cn.hutool:hutool-core")
+    }
+
+    implementation("cn.hutool:hutool-core:5.8.25")
+
     implementation("io.minio:minio:8.5.7")
 
     implementation("org.lionsoul:ip2region:2.7.0")

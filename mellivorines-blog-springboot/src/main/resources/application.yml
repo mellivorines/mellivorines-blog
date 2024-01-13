@@ -1,7 +1,7 @@
 server:
   port: 8080
-spring:
-  file-storage: #文件存储配置
+dromara:
+  x-file-storage: #文件存储配置
     default-platform: local-plus-1 #默认使用的存储平台
     thumbnail-suffix: ".min.jpg" #缩略图后缀，例如【.min.jpg】【.png】
     #对应平台的配置写在这里，注意缩进要对齐
@@ -22,7 +22,7 @@ spring:
         bucket-name: salamander-blog
         domain: http://localhost:9000/ # 访问域名，注意“/”结尾，例如：http://minio.abc.com/abc/
         base-path: test/ # 基础路径
-
+spring:
   servlet:
     multipart:
       max-file-size: 10MB
@@ -42,16 +42,6 @@ spring:
   web:
     resources:
       static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:/Users/lilinxi/data/
-    verify:
-      mail-limit: 60
-    flow:
-      period: 3
-      limit: 50
-      block: 30
-    cors:
-      origin: '*'
-      credentials: false
-      methods: '*'
   # 定时器配置
   quartz:
     # 使用数据库存储
