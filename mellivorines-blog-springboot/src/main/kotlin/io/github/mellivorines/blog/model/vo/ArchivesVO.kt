@@ -1,7 +1,6 @@
 package io.github.mellivorines.blog.model.vo
 
 import io.github.mellivorines.blog.model.entity.dto.ArticleInput
-import java.time.LocalDateTime
 
 
 /**

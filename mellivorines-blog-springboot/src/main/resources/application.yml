@@ -104,7 +104,8 @@ spring:
           min-idle: 0     # 最小空闲连接，默认0
 
   datasource:
-    url: jdbc:mysql://${sql_host}:3306/mellivorines_blog?serverTimezone=GMT%2B8
+#    url: jdbc:mysql://127.0.0.1:3306/mellivorines_blog?serverTimezone=GMT%2B8
+    url: ${sql_url}
     username: ${sql_username}
     password: ${sql_password}
     driver-class-name: com.mysql.cj.jdbc.Driver

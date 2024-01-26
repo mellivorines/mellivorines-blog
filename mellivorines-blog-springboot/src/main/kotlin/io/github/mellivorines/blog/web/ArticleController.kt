@@ -31,7 +31,7 @@ import java.time.format.DateTimeFormatter
 @RequestMapping("/api")
 class ArticleController(
     private val articleRepository: ArticleRepository,
-//    private val esMapper: ElasticsearchMapper
+    private val esMapper: ElasticsearchMapper
 ) {
     @GetMapping("/articles/topAndFeatured")
     fun topAndFeatured(): ResultVO<TopAndFeatured> {
