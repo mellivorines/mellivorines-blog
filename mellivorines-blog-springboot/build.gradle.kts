@@ -48,8 +48,6 @@ dependencies {
 
     implementation("cn.hutool:hutool-core:5.8.25")
 
-    implementation("io.minio:minio:8.5.7")
-
     implementation("org.lionsoul:ip2region:2.7.0")
     implementation("org.yaml:snakeyaml:2.1")
     implementation("com.alibaba.fastjson2:fastjson2-kotlin:2.0.41")

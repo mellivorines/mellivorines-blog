@@ -13,15 +13,6 @@ dromara:
         base-path: local-plus/ # 基础路径
         path-patterns: /local-plus/** # 访问路径
         storage-path: /Users/lilinxi/data/ # 存储路径
-    minio:
-      - platform: minio-1 # 存储平台标识
-        enable-storage: true  # 启用存储
-        access-key: minio_root
-        secret-key: minio_123456
-        end-point: http://localhost:9000
-        bucket-name: salamander-blog
-        domain: http://localhost:9000/ # 访问域名，注意“/”结尾，例如：http://minio.abc.com/abc/
-        base-path: test/ # 基础路径
 spring:
   servlet:
     multipart:
