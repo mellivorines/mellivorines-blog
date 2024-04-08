@@ -113,10 +113,6 @@ spring:
           initial-interval: 3000
     virtual-host: /  # 虚拟主机
 
-  elasticsearch:
-    uris:
-      - ${elasticsearch_host}
-
 # springdoc-openapi项目配置
 springdoc:
   swagger-ui:
